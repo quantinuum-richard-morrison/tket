@@ -49,6 +49,15 @@ Transform peephole_optimise_2q(bool allow_swaps = true);
 Transform full_peephole_optimise(
     bool allow_swaps = true, OpType target_2qb_gate = OpType::CX);
 
+/**
+ * Simplify using ZX calculus and extract a circuit back out.
+ *
+ * Will not work if the circuit contains created or discarded qubits.
+ *
+ * This may increase the cost of the circuit.
+ */
+Transform zx_graphlike_optimisation();
+
 // kitchen sink optimisation - phase gadget resynthesis, two-qubit Cartan
 // forms, Clifford Expects: Any gates Produces: CX, TK1
 Transform canonical_hyper_clifford_squash();

@@ -18,6 +18,7 @@
 
 #include "tket/Circuit/CircPool.hpp"
 #include "tket/Circuit/CircUtils.hpp"
+#include "tket/Converters/Converters.hpp"
 #include "tket/Gate/GatePtr.hpp"
 #include "tket/OpType/OpType.hpp"
 #include "tket/Transformations/BasicOptimisation.hpp"
@@ -29,6 +30,7 @@
 #include "tket/Transformations/Rebase.hpp"
 #include "tket/Transformations/ThreeQubitSquash.hpp"
 #include "tket/Transformations/Transform.hpp"
+#include "tket/ZX/Rewrite.hpp"
 
 namespace tket {
 
@@ -58,6 +60,24 @@ Transform full_peephole_optimise(bool allow_swaps, OpType target_2qb_gate) {
     default:
       throw std::invalid_argument("Invalid target 2-qubit gate");
   }
+}
+
+Transform zx_graphlike_optimisation() {
+  return Transform([](Circuit &circ) {
+    zx::ZXDiagram diag = circuit_to_zx(circ).first;
+    zx::Rewrite::to_graphlike_form().apply(diag);
+    zx::Rewrite::reduce_graphlike_form().apply(diag);
+    zx::Rewrite::to_MBQC_diag().apply(diag);
+    Circuit c = zx_to_circuit(diag);
+    qubit_vector_t orig_qs = circ.all_qubits();
+    qubit_vector_t c_qs = c.all_qubits();
+    qubit_map_t qmap;
+    for (unsigned i = 0; i < orig_qs.size(); ++i)
+      qmap.insert({c_qs.at(i), orig_qs.at(i)});
+    c.rename_units<Qubit, Qubit>(qmap);
+    circ = c;
+    return true;
+  });
 }
 
 Transform canonical_hyper_clifford_squash() {
