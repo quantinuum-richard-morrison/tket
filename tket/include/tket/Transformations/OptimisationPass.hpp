@@ -58,6 +58,12 @@ Transform full_peephole_optimise(
  */
 Transform zx_graphlike_optimisation();
 
+/**
+ * Apply \ref zx_graphlike_optimisation but discard the result if the given
+ * metric does not decrease.
+ */
+Transform try_zx_graphlike_optimisation(const Transform::Metric& metric);
+
 // kitchen sink optimisation - phase gadget resynthesis, two-qubit Cartan
 // forms, Clifford Expects: Any gates Produces: CX, TK1
 Transform canonical_hyper_clifford_squash();

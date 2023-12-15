@@ -42,17 +42,23 @@ Transform peephole_optimise_2q(bool allow_swaps) {
       hyper_clifford_squash(allow_swaps) >> synthesise_tket());
 }
 
+static const Transform::Metric n_2q_gates_metric([](const Circuit &circ) {
+  return circ.count_n_qubit_gates(2);
+});
+
 Transform full_peephole_optimise(bool allow_swaps, OpType target_2qb_gate) {
+  Transform try_zx = try_zx_graphlike_optimisation(n_2q_gates_metric);
   switch (target_2qb_gate) {
     case OpType::CX:
       return (
-          synthesise_tket() >> two_qubit_squash(false) >>
+          try_zx >> synthesise_tket() >> two_qubit_squash(false) >>
           clifford_simp(allow_swaps) >> synthesise_tket() >>
           two_qubit_squash(allow_swaps) >> three_qubit_squash() >>
           clifford_simp(allow_swaps) >> synthesise_tket());
     case OpType::TK2:
       return (
-          synthesise_tk() >> two_qubit_squash(OpType::TK2, 1., allow_swaps) >>
+          try_zx >> synthesise_tk() >>
+          two_qubit_squash(OpType::TK2, 1., allow_swaps) >>
           clifford_simp(allow_swaps) >>
           two_qubit_squash(OpType::TK2, 1., allow_swaps) >> synthesise_tk() >>
           three_qubit_squash(OpType::TK2) >> clifford_simp(allow_swaps) >>
@@ -77,6 +83,19 @@ Transform zx_graphlike_optimisation() {
     c.rename_units<Qubit, Qubit>(qmap);
     circ = c;
     return true;
+  });
+}
+
+Transform try_zx_graphlike_optimisation(const Transform::Metric &metric) {
+  return Transform([&metric](Circuit &circ) {
+    Circuit circ1 = circ;
+    zx_graphlike_optimisation().apply(circ1);
+    if (metric(circ1) < metric(circ)) {
+      circ = circ1;
+      return true;
+    } else {
+      return false;
+    }
   });
 }
 
