@@ -59,8 +59,9 @@ Transform full_peephole_optimise(
 Transform zx_graphlike_optimisation();
 
 /**
- * Apply \ref zx_graphlike_optimisation but discard the result if the given
- * metric does not decrease.
+ * Apply a rebase to {Rx, Rz, X, Z, H, CZ, CX} followed by
+ * \ref zx_graphlike_optimisation; discard the result if the given metric does
+ * not decrease.
  */
 Transform try_zx_graphlike_optimisation(const Transform::Metric& metric);
 

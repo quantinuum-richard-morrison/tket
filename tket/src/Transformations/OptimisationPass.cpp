@@ -89,6 +89,11 @@ Transform zx_graphlike_optimisation() {
 Transform try_zx_graphlike_optimisation(const Transform::Metric &metric) {
   return Transform([&metric](Circuit &circ) {
     Circuit circ1 = circ;
+    rebase_factory(
+        {OpType::X, OpType::Z, OpType::Rz, OpType::Rz, OpType::H, OpType::CX,
+         OpType::CZ},
+        CircPool::CX(), CircPool::tk1_to_rzrx)
+        .apply(circ1);
     zx_graphlike_optimisation().apply(circ1);
     if (metric(circ1) < metric(circ)) {
       circ = circ1;
