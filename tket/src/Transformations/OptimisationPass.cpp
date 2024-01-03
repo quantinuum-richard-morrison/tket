@@ -94,7 +94,13 @@ Transform try_zx_graphlike_optimisation(const Transform::Metric &metric) {
          OpType::CZ},
         CircPool::CX(), CircPool::tk1_to_rzrx)
         .apply(circ1);
-    zx_graphlike_optimisation().apply(circ1);
+    try {
+      zx_graphlike_optimisation().apply(circ1);
+    } catch (const zx::ZXError &) {
+      return false;
+    } catch (const Unsupported &) {
+      return false;
+    }
     if (metric(circ1) < metric(circ)) {
       circ = circ1;
       return true;
