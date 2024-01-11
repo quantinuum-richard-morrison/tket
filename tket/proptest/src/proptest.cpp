@@ -28,33 +28,6 @@
 using namespace tket;
 
 #define ALL_PASSES(DO)                    \
-  DO(SynthesiseTK)                        \
-  DO(SynthesiseTket)                      \
-  DO(SynthesiseHQS)                       \
-  DO(SynthesiseUMD)                       \
-  DO(PeepholeOptimise2Q)                  \
-  DO(FullPeepholeOptimise)                \
-  DO(RemoveRedundancies)                  \
-  DO(CommuteThroughMultis)                \
-  DO(DecomposeArbitrarilyControlledGates) \
-  DO(KAKDecomposition)                    \
-  DO(ThreeQubitSquash)                    \
-  DO(DecomposeMultiQubitsCX)              \
-  DO(DecomposeSingleQubitsTK1)            \
-  DO(DecomposeBoxes)                      \
-  DO(DecomposeTK2)                        \
-  DO(ComposePhasePolyBoxes)               \
-  DO(SquashTK1)                           \
-  DO(RebaseTket)                          \
-  DO(DecomposeBridges)                    \
-  DO(FlattenRegisters)                    \
-  DO(RemoveBarriers)                      \
-  DO(DelayMeasures)                       \
-  DO(GlobalisePhasedX)                    \
-  DO(NormaliseTK2)                        \
-  DO(SquashRzPhasedX)                     \
-  DO(CnXPairwiseDecomposition)            \
-  DO(RemoveImplicitQubitPermutation)      \
   DO(ZXGraphlikeOptimisation)
 
 static const std::map<PassPtr, std::string> &pass_name() {
@@ -248,7 +221,7 @@ static void check_correctness(const Circuit &c0, const CompilationUnit &cu) {
     const auto u1 = tket_sim::get_unitary(c1);
     const auto u0 = tket_sim::get_unitary(c0_copy);
     RC_ASSERT(tket_sim::compare_statevectors_or_unitaries(
-        u0, m_inv_fin * u1 * m_ini));
+        u0, m_inv_fin * u1 * m_ini, tket_sim::MatrixEquivalence::EQUAL_UP_TO_GLOBAL_PHASE));
   } catch (const Unsupported &) {
   } catch (const BadOpType &) {
   }

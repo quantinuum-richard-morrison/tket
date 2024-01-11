@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "OpType/OpType.hpp"
 #include "tket/Circuit/CircPool.hpp"
 #include "tket/Converters/Converters.hpp"
 #include "tket/ZX/Flow.hpp"
@@ -159,7 +160,8 @@ BoundaryVertMap circuit_to_zx_recursive(
       // Spiderless ops are handled during vertex wiring
       case OpType::Barrier:
       case OpType::noop:
-      case OpType::SWAP: {
+      case OpType::SWAP:
+      case OpType::Phase: {
         continue;
       }
       case OpType::H: {
