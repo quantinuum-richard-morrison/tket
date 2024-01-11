@@ -42,12 +42,14 @@ Transform peephole_optimise_2q(bool allow_swaps) {
       hyper_clifford_squash(allow_swaps) >> synthesise_tket());
 }
 
-static const Transform::Metric n_2q_gates_metric([](const Circuit &circ) {
-  return circ.count_n_qubit_gates(2);
-});
+static const AcceptanceCriterion reduced_2q_count_and_depth(
+    [](const Circuit &circ0, const Circuit &circ1) {
+      return (circ1.count_n_qubit_gates(2) < circ0.count_n_qubit_gates(2)) &&
+             (circ1.depth() < circ0.depth());
+    });
 
 Transform full_peephole_optimise(bool allow_swaps, OpType target_2qb_gate) {
-  Transform try_zx = try_zx_graphlike_optimisation(n_2q_gates_metric);
+  Transform try_zx = try_zx_graphlike_optimisation(reduced_2q_count_and_depth);
   switch (target_2qb_gate) {
     case OpType::CX:
       return (
@@ -86,8 +88,8 @@ Transform zx_graphlike_optimisation() {
   });
 }
 
-Transform try_zx_graphlike_optimisation(const Transform::Metric &metric) {
-  return Transform([&metric](Circuit &circ) {
+Transform try_zx_graphlike_optimisation(const AcceptanceCriterion &criterion) {
+  return Transform([&criterion](Circuit &circ) {
     Circuit circ1 = circ;
     rebase_factory(
         {OpType::X, OpType::Z, OpType::Rz, OpType::Rz, OpType::H, OpType::CX,
@@ -101,7 +103,7 @@ Transform try_zx_graphlike_optimisation(const Transform::Metric &metric) {
     } catch (const Unsupported &) {
       return false;
     }
-    if (metric(circ1) < metric(circ)) {
+    if (criterion(circ1, circ)) {
       circ = circ1;
       return true;
     } else {

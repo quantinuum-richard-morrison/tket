@@ -58,12 +58,17 @@ Transform full_peephole_optimise(
  */
 Transform zx_graphlike_optimisation();
 
+typedef std::function<bool(const Circuit&, const Circuit&)> AcceptanceCriterion;
+
 /**
  * Apply a rebase to {Rx, Rz, X, Z, H, CZ, CX} followed by
- * \ref zx_graphlike_optimisation; discard the result if the given metric does
- * not decrease.
+ * \ref zx_graphlike_optimisation; discard the result if the given criterion is
+ * not satisfied.
+ *
+ * \param criterion Function taking the old circuit and the new circuit (in that
+ * order) which returns true if we want to accept the new circuit.
  */
-Transform try_zx_graphlike_optimisation(const Transform::Metric& metric);
+Transform try_zx_graphlike_optimisation(const AcceptanceCriterion& criterion);
 
 // kitchen sink optimisation - phase gadget resynthesis, two-qubit Cartan
 // forms, Clifford Expects: Any gates Produces: CX, TK1
