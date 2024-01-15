@@ -2041,7 +2041,17 @@ SCENARIO("GateSetPredicate and SequencePass") {
         });
     PassPtr zx_opt = ZXGraphlikeOptimisation();
     std::vector<PassPtr> passes = {zx_rebase, zx_opt};
-    REQUIRE_NOTHROW(std::make_shared<SequencePass>(passes));
+    PassPtr seq_pass = std::make_shared<SequencePass>(passes);
+    Circuit circ(2, 2);
+    circ.add_op<unsigned>(OpType::TK2, {0.2, 0.3, 0.4}, {0, 1});
+    circ.add_measure(0, 0);
+    circ.add_op<unsigned>(OpType::Collapse, {1});
+    circ.add_op<unsigned>(OpType::Reset, {0});
+    circ.add_op<unsigned>(OpType::SWAP, {0, 1});
+    circ.add_op<unsigned>(OpType::Phase, 0.5, {});
+    CompilationUnit cu(circ);
+    CHECK(seq_pass->apply(cu));
+    std::cout << cu.get_circ_ref() << std::endl;
   }
 }
 }  // namespace test_CompilerPass
