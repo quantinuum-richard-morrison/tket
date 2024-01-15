@@ -2026,5 +2026,23 @@ SCENARIO(
     REQUIRE(cu.get_circ_ref().n_gates() == 1);
   }
 }
+
+SCENARIO("GateSetPredicate and SequencePass") {
+  GIVEN("Rebase followed by ZXGraphlikeOptimisation") {
+    PassPtr zx_rebase = gen_rebase_pass(
+        {OpType::H, OpType::X, OpType::Z, OpType::Rx, OpType::Rz, OpType::CX,
+         OpType::CZ},
+        CircPool::CX(), [](const Expr& a, const Expr& b, const Expr& c) {
+          Circuit circ(1);
+          circ.add_op<unsigned>(OpType::Rz, c, {0});
+          circ.add_op<unsigned>(OpType::Rx, b, {0});
+          circ.add_op<unsigned>(OpType::Rz, a, {0});
+          return circ;
+        });
+    PassPtr zx_opt = ZXGraphlikeOptimisation();
+    std::vector<PassPtr> passes = {zx_rebase, zx_opt};
+    REQUIRE_NOTHROW(std::make_shared<SequencePass>(passes));
+  }
+}
 }  // namespace test_CompilerPass
 }  // namespace tket
