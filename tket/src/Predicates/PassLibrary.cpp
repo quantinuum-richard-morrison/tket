@@ -502,10 +502,11 @@ const PassPtr &ZXGraphlikeOptimisation() {
       circ = c;
       return true;
     });
-    OpTypeSet in_optypes = {OpType::Input, OpType::Output, OpType::noop,
-                            OpType::SWAP,  OpType::H,      OpType::Rz,
-                            OpType::Rx,    OpType::X,      OpType::Z,
-                            OpType::CX,    OpType::CZ};
+    OpTypeSet in_optypes = {OpType::Input,    OpType::Output, OpType::noop,
+                            OpType::SWAP,     OpType::H,      OpType::Rz,
+                            OpType::Rx,       OpType::X,      OpType::Z,
+                            OpType::CX,       OpType::CZ,     OpType::Measure,
+                            OpType::Collapse, OpType::Reset,  OpType::Phase};
     PredicatePtrMap precons = {
         CompilationUnit::make_type_pair(
             std::make_shared<GateSetPredicate>(in_optypes)),
