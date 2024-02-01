@@ -106,7 +106,7 @@ jobs:
 
   build_macos_M1_wheels:
     name: Build macos (M1) wheels
-    runs-on: macos-13-xlarge
+    runs-on: macos-14
     strategy:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
@@ -125,7 +125,7 @@ jobs:
       run: |
         conan profile detect
         DEFAULT_PROFILE_PATH=`conan profile path default`
-        PROFILE_PATH=./conan-profiles/macos-13-xlarge
+        PROFILE_PATH=./conan-profiles/macos-14
         diff ${DEFAULT_PROFILE_PATH} ${PROFILE_PATH} || true
         cp ${PROFILE_PATH} ${DEFAULT_PROFILE_PATH}
         conan remote add tket-libs https://quantinuumsw.jfrog.io/artifactory/api/conan/tket1-libs --index 0
@@ -285,7 +285,7 @@ jobs:
   test_macos_M1_wheels:
     name: Test macos (M1) wheels
     needs: build_macos_M1_wheels
-    runs-on: macos-13-xlarge
+    runs-on: macos-14
     strategy:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
