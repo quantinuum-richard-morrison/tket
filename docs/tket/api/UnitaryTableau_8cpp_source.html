@@ -672,16 +672,16 @@ $(function() {
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; nqs; ++i) {</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="classtket_1_1Qubit.html">Qubit</a> qi = tab.tab_.qubits_.right.at(i);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    os &lt;&lt; tab.tab_.tab_.xmat_.row(i) &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; tab.tab_.tab_.zmat_.row(i)</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;       &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; tab.tab_.tab_.phase_(i) &lt;&lt; <span class="stringliteral">&quot;\t-&gt;\t&quot;</span></div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;       &lt;&lt; <span class="stringliteral">&quot;X@&quot;</span> &lt;&lt; qi.<a class="code" href="classtket_1_1UnitID.html#a98378460706cc69edd8aa45500db6a14">repr</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;       &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; tab.tab_.tab_.phase_(i) &lt;&lt; <span class="stringliteral">&quot;\t-&gt;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;X@&quot;</span> &lt;&lt; qi.<a class="code" href="classtket_1_1UnitID.html#a98378460706cc69edd8aa45500db6a14">repr</a>()</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;       &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;  }</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;--&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; nqs; ++i) {</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <a class="code" href="classtket_1_1Qubit.html">Qubit</a> qi = tab.tab_.qubits_.right.at(i);</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    os &lt;&lt; tab.tab_.tab_.xmat_.row(i + nqs) &lt;&lt; <span class="stringliteral">&quot;   &quot;</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;       &lt;&lt; tab.tab_.tab_.zmat_.row(i + nqs) &lt;&lt; <span class="stringliteral">&quot;   &quot;</span></div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;       &lt;&lt; tab.tab_.tab_.phase_(i + nqs) &lt;&lt; <span class="stringliteral">&quot;\t-&gt;\t&quot;</span></div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;       &lt;&lt; <span class="stringliteral">&quot;Z@&quot;</span> &lt;&lt; qi.<a class="code" href="classtket_1_1UnitID.html#a98378460706cc69edd8aa45500db6a14">repr</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;       &lt;&lt; tab.tab_.tab_.phase_(i + nqs) &lt;&lt; <span class="stringliteral">&quot;\t-&gt;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Z@&quot;</span> &lt;&lt; qi.<a class="code" href="classtket_1_1UnitID.html#a98378460706cc69edd8aa45500db6a14">repr</a>()</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;       &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;  }</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;  <span class="keywordflow">return</span> os;</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;}</div>
