@@ -173,6 +173,9 @@ Functions</h2></td></tr>
 <tr class="separator:ac4c86d0e3d325777cad289822d9316b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9719d81133e6fc212553b0c9e326a4a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1Transforms.html#a9719d81133e6fc212553b0c9e326a4a1">clifford_reduction</a> (bool allow_swaps)</td></tr>
 <tr class="separator:a9719d81133e6fc212553b0c9e326a4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1a6ddcfd4fa03dcf9c06ef56f5f38b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1Transforms.html#abf1a6ddcfd4fa03dcf9c06ef56f5f38b">clifford_resynthesis</a> (std::optional&lt; std::function&lt; <a class="el" href="classtket_1_1Circuit.html">Circuit</a>(const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;)&gt;&gt; transform=std::nullopt, bool allow_swaps=true)</td></tr>
+<tr class="memdesc:abf1a6ddcfd4fa03dcf9c06ef56f5f38b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resynthesise all Clifford subcircuits and simplify using Clifford rules.  <a href="namespacetket_1_1Transforms.html#abf1a6ddcfd4fa03dcf9c06ef56f5f38b">More...</a><br /></td></tr>
+<tr class="separator:abf1a6ddcfd4fa03dcf9c06ef56f5f38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e2492d0b6b2ed702e84a93c1e56caff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1Transforms.html#a3e2492d0b6b2ed702e84a93c1e56caff">sequence</a> (std::vector&lt; <a class="el" href="classtket_1_1Transform.html">Transform</a> &gt; &amp;tvec)</td></tr>
 <tr class="separator:a3e2492d0b6b2ed702e84a93c1e56caff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0307914fcbee25952ef479cdf587b88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtket_1_1Transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket_1_1Transforms.html#ab0307914fcbee25952ef479cdf587b88">repeat</a> (const <a class="el" href="classtket_1_1Transform.html">Transform</a> &amp;trans)</td></tr>
@@ -682,6 +685,46 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="CliffordReductionPass_8cpp_source.html#l00754">754</a> of file <a class="el" href="CliffordReductionPass_8cpp_source.html">CliffordReductionPass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abf1a6ddcfd4fa03dcf9c06ef56f5f38b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1a6ddcfd4fa03dcf9c06ef56f5f38b">&#9670;&nbsp;</a></span>clifford_resynthesis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtket_1_1Transform.html">Transform</a> tket::Transforms::clifford_resynthesis </td>
+          <td>(</td>
+          <td class="paramtype">std::optional&lt; std::function&lt; <a class="el" href="classtket_1_1Circuit.html">Circuit</a>(const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;)&gt;&gt;&#160;</td>
+          <td class="paramname"><em>transform</em> = <code>std::nullopt</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allow_swaps</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resynthesise all Clifford subcircuits and simplify using Clifford rules. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transform</td><td>optional user-provided resynthesis method to apply to all Clifford subcircuits (a function taking a Clifford circuit as an argument and returning an equivalent circuit); if not provided, a default resynthesis method is applied </td></tr>
+    <tr><td class="paramname">allow_swaps</td><td>whether the rewriting may introduce wire swaps (only relevant to the default resynthesis method used when the <code>transform</code> argument is not provided) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>transform to perform Clifford resynthesis </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="CliffordResynthesis_8cpp_source.html#l00068">68</a> of file <a class="el" href="CliffordResynthesis_8cpp_source.html">CliffordResynthesis.cpp</a>.</p>
 
 </div>
 </div>
