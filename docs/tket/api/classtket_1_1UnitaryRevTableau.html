@@ -92,6 +92,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ff248c8476e394d6af32645131f9371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1UnitaryRevTableau.html#a4ff248c8476e394d6af32645131f9371">UnitaryRevTableau</a> (const <a class="el" href="namespacetket.html#ad949814c463d9f998540c0f812e76aa6">qubit_vector_t</a> &amp;qbs)</td></tr>
 <tr class="memdesc:a4ff248c8476e394d6af32645131f9371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the tableau for the identity over specific qubits.  <a href="classtket_1_1UnitaryRevTableau.html#a4ff248c8476e394d6af32645131f9371">More...</a><br /></td></tr>
 <tr class="separator:a4ff248c8476e394d6af32645131f9371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc22b0ba216e527835af43fdefb3cc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1UnitaryRevTableau.html#aedc22b0ba216e527835af43fdefb3cc2">UnitaryRevTableau</a> (const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;xx, const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;xz, const <a class="el" href="namespacetket.html#a1e0393129a9c3b372ec805621009d89f">VectorXb</a> &amp;xph, const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;zx, const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;zz, const <a class="el" href="namespacetket.html#a1e0393129a9c3b372ec805621009d89f">VectorXb</a> &amp;zph)</td></tr>
+<tr class="memdesc:aedc22b0ba216e527835af43fdefb3cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a tableau from the underlying binary matrices.  <a href="classtket_1_1UnitaryRevTableau.html#aedc22b0ba216e527835af43fdefb3cc2">More...</a><br /></td></tr>
+<tr class="separator:aedc22b0ba216e527835af43fdefb3cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858496fc8f40747c2d5aa1d2e1e088d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1UnitaryRevTableau.html#a858496fc8f40747c2d5aa1d2e1e088d6">UnitaryRevTableau</a> ()</td></tr>
 <tr class="memdesc:a858496fc8f40747c2d5aa1d2e1e088d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Other required constructors.  <a href="classtket_1_1UnitaryRevTableau.html#a858496fc8f40747c2d5aa1d2e1e088d6">More...</a><br /></td></tr>
 <tr class="separator:a858496fc8f40747c2d5aa1d2e1e088d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,7 +175,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="UnitaryTableau_8hpp_source.html#l00176">176</a> of file <a class="el" href="UnitaryTableau_8hpp_source.html">UnitaryTableau.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a31ca3531301873075d7300990f455174"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31ca3531301873075d7300990f455174">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ca3531301873075d7300990f455174">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +207,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="a4ff248c8476e394d6af32645131f9371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff248c8476e394d6af32645131f9371">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff248c8476e394d6af32645131f9371">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,8 +236,73 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="aedc22b0ba216e527835af43fdefb3cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc22b0ba216e527835af43fdefb3cc2">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tket::UnitaryRevTableau::UnitaryRevTableau </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;&#160;</td>
+          <td class="paramname"><em>xx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;&#160;</td>
+          <td class="paramname"><em>xz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#a1e0393129a9c3b372ec805621009d89f">VectorXb</a> &amp;&#160;</td>
+          <td class="paramname"><em>xph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;&#160;</td>
+          <td class="paramname"><em>zx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#afc6a69cf78c26da6848112274764acc6">MatrixXb</a> &amp;&#160;</td>
+          <td class="paramname"><em>zz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacetket.html#a1e0393129a9c3b372ec805621009d89f">VectorXb</a> &amp;&#160;</td>
+          <td class="paramname"><em>zph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a tableau from the underlying binary matrices. </p>
+<p>Qubits given default names. </p>
+
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00502">502</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a858496fc8f40747c2d5aa1d2e1e088d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a858496fc8f40747c2d5aa1d2e1e088d6">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a858496fc8f40747c2d5aa1d2e1e088d6">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +323,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="ae176409bf023c9feecf2665ba6f4a89e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae176409bf023c9feecf2665ba6f4a89e">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae176409bf023c9feecf2665ba6f4a89e">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,7 +349,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="a7def9f0f33f2a2d11e1d91f472662feb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7def9f0f33f2a2d11e1d91f472662feb">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7def9f0f33f2a2d11e1d91f472662feb">&#9670;&nbsp;</a></span>UnitaryRevTableau() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,7 +401,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00540">540</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00545">545</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +431,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00535">535</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00540">540</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +461,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00551">551</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00556">556</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -423,7 +491,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00545">545</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00550">550</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -453,7 +521,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00562">562</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00567">567</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -492,7 +560,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00557">557</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00562">562</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -512,7 +580,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00523">523</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00528">528</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -534,7 +602,7 @@ Friends</h2></td></tr>
 
 <p><a class="el" href="classtket_1_1Transform.html" title="A transformation of a circuit that preserves its semantics.">Transform</a> the tableau according to consuming a Clifford gate at either end of the circuit. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00519">519</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00524">524</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +622,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00531">531</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00536">536</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -574,7 +642,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00527">527</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00532">532</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -623,7 +691,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The tableau corresponding to applying <code>first</code>, followed by <code>second</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00567">567</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00572">572</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -645,7 +713,7 @@ Friends</h2></td></tr>
 <p>Gives the <a class="el" href="classtket_1_1UnitaryRevTableau.html">UnitaryRevTableau</a> corresponding to the complex conjugate unitary. </p>
 <p>This calls <a class="el" href="classtket_1_1UnitaryRevTableau.html#a94a86a24639af672e66419f76f702968" title="Gives the UnitaryRevTableau corresponding to the complex conjugate unitary.">conjugate()</a> on the underlying <a class="el" href="classtket_1_1SymplecticTableau.html">SymplecticTableau</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00586">586</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00591">591</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -667,7 +735,7 @@ Friends</h2></td></tr>
 <p>Gives the <a class="el" href="classtket_1_1UnitaryRevTableau.html">UnitaryRevTableau</a> corresponding to the inverse (dagger) or transpose unitary. </p>
 <p>This is distinct from simply transposing the binary matrix representation. Takes time O(N^3) for N qubits. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00574">574</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00579">579</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -688,7 +756,7 @@ Friends</h2></td></tr>
 
 <p>Access all IDs for the qubits used in the tableau. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00515">515</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00520">520</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -710,7 +778,7 @@ Friends</h2></td></tr>
 
 <p>Combine rows into a single row according to a SpPauliStabiliser. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00510">510</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00515">515</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -732,7 +800,7 @@ Friends</h2></td></tr>
 
 <p>Read off an X row as a Pauli string. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00502">502</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00507">507</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -754,7 +822,7 @@ Friends</h2></td></tr>
 
 <p>Read off a Z row as a Pauli string. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00506">506</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00511">511</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -826,7 +894,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00611">611</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00616">616</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -845,7 +913,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00580">580</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00585">585</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -912,7 +980,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00619">619</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00624">624</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -950,7 +1018,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00592">592</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00597">597</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
@@ -988,7 +1056,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00615">615</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitaryTableau_8cpp_source.html#l00620">620</a> of file <a class="el" href="UnitaryTableau_8cpp_source.html">UnitaryTableau.cpp</a>.</p>
 
 </div>
 </div>
