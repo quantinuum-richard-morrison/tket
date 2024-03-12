@@ -641,9 +641,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a94d2259093b19ca4d7cf26a2b7df4c13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a07087916d6266ec5a701727fe795faa4">IndexMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Circuit.html#a94d2259093b19ca4d7cf26a2b7df4c13">index_map</a> () const</td></tr>
 <tr class="memdesc:a94d2259093b19ca4d7cf26a2b7df4c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index the vertices according to their ordering in the DAG.  <a href="classtket_1_1Circuit.html#a94d2259093b19ca4d7cf26a2b7df4c13">More...</a><br /></td></tr>
 <tr class="separator:a94d2259093b19ca4d7cf26a2b7df4c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a980dddd67fe81776a50f5c959a4a2eec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Circuit.html#a980dddd67fe81776a50f5c959a4a2eec">get_subcircuits</a> (std::function&lt; bool(<a class="el" href="namespacetket.html#a75405147f5ffd3ff1ff1118fba63bcd0">Op_ptr</a>)&gt; criterion) const</td></tr>
-<tr class="memdesc:a980dddd67fe81776a50f5c959a4a2eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a partition into connected convex subcircuits of the set of ops satisfying the given criterion.  <a href="classtket_1_1Circuit.html#a980dddd67fe81776a50f5c959a4a2eec">More...</a><br /></td></tr>
-<tr class="separator:a980dddd67fe81776a50f5c959a4a2eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbcc5ded19b53b695682d28923eb493"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Circuit.html#afcbcc5ded19b53b695682d28923eb493">get_subcircuits</a> (std::function&lt; bool(<a class="el" href="namespacetket.html#a75405147f5ffd3ff1ff1118fba63bcd0">Op_ptr</a>)&gt; criterion)</td></tr>
+<tr class="memdesc:afcbcc5ded19b53b695682d28923eb493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a partition into connected convex subcircuits of the set of ops satisfying the given criterion.  <a href="classtket_1_1Circuit.html#afcbcc5ded19b53b695682d28923eb493">More...</a><br /></td></tr>
+<tr class="separator:afcbcc5ded19b53b695682d28923eb493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0b91594f2bde0f31369f83c2650d08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtket_1_1Subcircuit.html">Subcircuit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Circuit.html#aae0b91594f2bde0f31369f83c2650d08">make_subcircuit</a> (<a class="el" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> verts) const</td></tr>
 <tr class="memdesc:aae0b91594f2bde0f31369f83c2650d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="structtket_1_1Subcircuit.html">Subcircuit</a> with a given vertex set.  <a href="classtket_1_1Circuit.html#aae0b91594f2bde0f31369f83c2650d08">More...</a><br /></td></tr>
 <tr class="separator:aae0b91594f2bde0f31369f83c2650d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4442,8 +4442,8 @@ template&lt;class ID &gt; </div>
 
 </div>
 </div>
-<a id="a980dddd67fe81776a50f5c959a4a2eec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a980dddd67fe81776a50f5c959a4a2eec">&#9670;&nbsp;</a></span>get_subcircuits()</h2>
+<a id="afcbcc5ded19b53b695682d28923eb493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcbcc5ded19b53b695682d28923eb493">&#9670;&nbsp;</a></span>get_subcircuits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4453,7 +4453,7 @@ template&lt;class ID &gt; </div>
           <td>(</td>
           <td class="paramtype">std::function&lt; bool(<a class="el" href="namespacetket.html#a75405147f5ffd3ff1ff1118fba63bcd0">Op_ptr</a>)&gt;&#160;</td>
           <td class="paramname"><em>criterion</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -4467,7 +4467,7 @@ template&lt;class ID &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector of disjoint vertex sets whose union includes all ops satisfying the criterion. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SubcircuitFinder_8cpp_source.html#l00204">204</a> of file <a class="el" href="SubcircuitFinder_8cpp_source.html">SubcircuitFinder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SubcircuitFinder_8cpp_source.html#l00224">224</a> of file <a class="el" href="SubcircuitFinder_8cpp_source.html">SubcircuitFinder.cpp</a>.</p>
 
 </div>
 </div>
@@ -4847,7 +4847,7 @@ template&lt;class ID &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>corresponding <a class="el" href="structtket_1_1Subcircuit.html">Subcircuit</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SubcircuitFinder_8cpp_source.html#l00210">210</a> of file <a class="el" href="SubcircuitFinder_8cpp_source.html">SubcircuitFinder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SubcircuitFinder_8cpp_source.html#l00230">230</a> of file <a class="el" href="SubcircuitFinder_8cpp_source.html">SubcircuitFinder.cpp</a>.</p>
 
 </div>
 </div>
