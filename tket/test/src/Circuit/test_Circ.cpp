@@ -3401,6 +3401,13 @@ SCENARIO("Finding subcircuits") {
 
     std::vector<VertexSet> subcircuits =
         c.get_subcircuits([](Op_ptr op) { return op->is_clifford(); });
+    for (const VertexSet & subcircuit : subcircuits) {
+      std::cout << "{";
+      for (const Vertex &v : subcircuit) {
+        std::cout << c.get_Op_ptr_from_Vertex(v)->get_name() << ", ";
+      }
+      std::cout << "}" << std::endl;
+    }
     REQUIRE(subcircuits.size() == 2);
     CHECK(subcircuits[0] == expected0);
     CHECK(subcircuits[1] == expected1);
