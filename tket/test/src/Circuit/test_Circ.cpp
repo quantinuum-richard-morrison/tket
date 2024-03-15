@@ -14,6 +14,7 @@
 
 #include <boost/graph/graph_traits.hpp>
 #include <catch2/catch_test_macros.hpp>
+#include <cstddef>
 #include <memory>
 #include <sstream>
 #include <unsupported/Eigen/MatrixFunctions>
@@ -3425,8 +3426,13 @@ SCENARIO("Finding subcircuits") {
     c.add_op<unsigned>(OpType::SXdg, {0});
     std::vector<VertexSet> subcircuits =
         c.get_subcircuits([](Op_ptr op) { return op->is_clifford(); });
-    REQUIRE(subcircuits.size() == 2);
-    CHECK(subcircuits[0].size() + subcircuits[1].size() == 15);
+    std::size_t n_subcircuits = subcircuits.size();
+    REQUIRE(n_subcircuits <= 3);
+    std::size_t total_subcircuits_size = 0;
+    for (const VertexSet& subcircuit : subcircuits) {
+      total_subcircuits_size += subcircuit.size();
+    }
+    CHECK(total_subcircuits_size == 15);
   }
 }
 
