@@ -98,7 +98,7 @@ jobs:
     if: needs.check_changes.outputs.tket_or_workflow_changed == 'true'
     strategy:
       matrix:
-        os: ['ubuntu-22.04', 'macos-12', 'macos-13-xlarge']
+        os: ['ubuntu-22.04', 'macos-13-xlarge']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
