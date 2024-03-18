@@ -128,9 +128,17 @@ static subcircuit_info_t convex_union(
 
   // succs = (succs0 ∖ verts1) ∪ (succs1 ∖ verts0)
   VertexVec s0mv1;
-  std::set_difference(
-      succs0.begin(), succs0.end(), verts1.begin(), verts1.end(),
-      std::inserter(s0mv1, s0mv1.begin()));
+  for (const Vertex &v : succs0) {
+    if (verts1.contains(v)) {
+      std::cout << "verts1 does not contain " << circ->get_Op_ptr_from_Vertex(v)->get_name() << std::endl;
+    } else {
+      std::cout << "verts1 contains " << circ->get_Op_ptr_from_Vertex(v)->get_name() << std::endl;
+      s0mv1.push_back(v);
+    }
+  }
+  // std::set_difference(
+  //     succs0.begin(), succs0.end(), verts1.begin(), verts1.end(),
+  //     std::inserter(s0mv1, s0mv1.begin()));
   std::cout << "s0mv1:"; print_vertexvec(*circ, s0mv1); std::cout << std::endl;
   VertexVec s1mv0;
   std::set_difference(
