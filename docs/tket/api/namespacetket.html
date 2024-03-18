@@ -686,13 +686,13 @@ Typedefs</h2></td></tr>
 <tr class="separator:aecaec372664e1c2f33ff81d9a5c58ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17e909abfcb8ba201b8c8d6ba7a79bb4"><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a17e909abfcb8ba201b8c8d6ba7a79bb4">VertexList</a></td></tr>
 <tr class="separator:a17e909abfcb8ba201b8c8d6ba7a79bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07087916d6266ec5a701727fe795faa4"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a>, unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a07087916d6266ec5a701727fe795faa4">IndexMap</a></td></tr>
-<tr class="separator:a07087916d6266ec5a701727fe795faa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d5d4dcdf5f6398a59c47755a7bb9ab"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a>, std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#ae8d5d4dcdf5f6398a59c47755a7bb9ab">IndexMap</a></td></tr>
+<tr class="separator:ae8d5d4dcdf5f6398a59c47755a7bb9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad33916c99aa3056f3909f9ac1563a6"><td class="memItemLeft" align="right" valign="top">typedef boost::adj_list_vertex_property_map&lt; <a class="el" href="namespacetket.html#af4988a391ad5e8bc5523e50daff2c932">DAG</a>, std::size_t, std::size_t &amp;, boost::vertex_index_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#acad33916c99aa3056f3909f9ac1563a6">VIndex</a></td></tr>
 <tr class="separator:acad33916c99aa3056f3909f9ac1563a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c49cdec38b8d99fd5d35ca59ca6ae01"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; unsigned, <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a6c49cdec38b8d99fd5d35ca59ca6ae01">IVertex</a></td></tr>
-<tr class="memdesc:a6c49cdec38b8d99fd5d35ca59ca6ae01"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex with an index.  <a href="namespacetket.html#a6c49cdec38b8d99fd5d35ca59ca6ae01">More...</a><br /></td></tr>
-<tr class="separator:a6c49cdec38b8d99fd5d35ca59ca6ae01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2feda3e52e7fb7b2508888ba56665a99"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::size_t, <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a2feda3e52e7fb7b2508888ba56665a99">IVertex</a></td></tr>
+<tr class="memdesc:a2feda3e52e7fb7b2508888ba56665a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex with an index.  <a href="namespacetket.html#a2feda3e52e7fb7b2508888ba56665a99">More...</a><br /></td></tr>
+<tr class="separator:a2feda3e52e7fb7b2508888ba56665a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a99d9f2b64decd8803090cc890e1e7d"><td class="memItemLeft" align="right" valign="top">typedef boost::graph_traits&lt; <a class="el" href="namespacetket.html#af4988a391ad5e8bc5523e50daff2c932">DAG</a> &gt;::edge_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a6a99d9f2b64decd8803090cc890e1e7d">Edge</a></td></tr>
 <tr class="separator:a6a99d9f2b64decd8803090cc890e1e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87b3e8d61fc90082021f300979610324"><td class="memItemLeft" align="right" valign="top">typedef boost::graph_traits&lt; <a class="el" href="namespacetket.html#af4988a391ad5e8bc5523e50daff2c932">DAG</a> &gt;::edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a87b3e8d61fc90082021f300979610324">E_iterator</a></td></tr>
@@ -2651,7 +2651,7 @@ Variables</h2></td></tr>
 
 <p>Graph representing a circuit, with operations as nodes. </p>
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00070">70</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00071">71</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2703,7 +2703,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00092">92</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00093">93</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2719,7 +2719,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00091">91</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00092">92</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2735,7 +2735,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00093">93</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00094">94</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2751,7 +2751,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00090">90</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00091">91</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2799,7 +2799,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00096">96</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00097">97</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2815,7 +2815,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00094">94</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00095">95</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2831,7 +2831,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00095">95</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00096">96</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2935,19 +2935,19 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a07087916d6266ec5a701727fe795faa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07087916d6266ec5a701727fe795faa4">&#9670;&nbsp;</a></span>IndexMap</h2>
+<a id="ae8d5d4dcdf5f6398a59c47755a7bb9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d5d4dcdf5f6398a59c47755a7bb9ab">&#9670;&nbsp;</a></span>IndexMap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::unordered_map&lt;<a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a>, unsigned&gt; <a class="el" href="namespacetket.html#a07087916d6266ec5a701727fe795faa4">tket::IndexMap</a></td>
+          <td class="memname">typedef std::unordered_map&lt;<a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a>, std::size_t&gt; <a class="el" href="namespacetket.html#ae8d5d4dcdf5f6398a59c47755a7bb9ab">tket::IndexMap</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00077">77</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00078">78</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -2986,14 +2986,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c49cdec38b8d99fd5d35ca59ca6ae01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c49cdec38b8d99fd5d35ca59ca6ae01">&#9670;&nbsp;</a></span>IVertex</h2>
+<a id="a2feda3e52e7fb7b2508888ba56665a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2feda3e52e7fb7b2508888ba56665a99">&#9670;&nbsp;</a></span>IVertex</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::pair&lt;unsigned, <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a>&gt; <a class="el" href="namespacetket.html#a6c49cdec38b8d99fd5d35ca59ca6ae01">tket::IVertex</a></td>
+          <td class="memname">typedef std::pair&lt;std::size_t, <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a>&gt; <a class="el" href="namespacetket.html#a2feda3e52e7fb7b2508888ba56665a99">tket::IVertex</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3001,7 +3001,7 @@ Variables</h2></td></tr>
 <p>A vertex with an index. </p>
 <p>This can be used instead of a plain <a class="el" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a> in associative containers where control over the order of iteration is required. </p>
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00088">88</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00089">89</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -3558,7 +3558,7 @@ Variables</h2></td></tr>
 
 <p>A specific entry or exit port of a vertex. </p>
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00043">43</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00044">44</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4291,7 +4291,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00073">73</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00074">74</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4339,7 +4339,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00072">72</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00073">73</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4371,7 +4371,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00076">76</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00077">77</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4387,7 +4387,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00074">74</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00075">75</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4403,7 +4403,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00075">75</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00076">76</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4419,7 +4419,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00098">98</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00099">99</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -4435,7 +4435,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00080">80</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00081">81</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
@@ -5001,7 +5001,7 @@ template&lt;typename A , typename B &gt; </div>
 <tr><td class="fieldname"><a id="a8e33f26891628ded8365c5855a6e832dac41a31890959544c6523af684561abe5"></a>Target&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00046">46</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DAGDefs_8hpp_source.html#l00047">47</a> of file <a class="el" href="DAGDefs_8hpp_source.html">DAGDefs.hpp</a>.</p>
 
 </div>
 </div>
