@@ -45,6 +45,14 @@ void print_vertexset(const Circuit & circ, const VertexSet &verts) {
   std::cout << "}";
 }
 
+void print_vertexvec(const Circuit & circ, const VertexVec &verts) {
+  std::cout << "{";
+  for (const Vertex &v : verts) {
+    std::cout << circ.get_Op_ptr_from_Vertex(v)->get_name() << ",";
+  }
+  std::cout << "}";
+}
+
 void print_subcircuit_info(const Circuit &circ, const subcircuit_info_t &info) {
   std::cout << "[";
   std::cout << "verts: "; print_vertexset(circ, info.verts);
@@ -82,6 +90,7 @@ static bool union_is_connected(
 // Return the union of two disjoint convex connected subcircuits, assuming that
 // the union is convex and connected.
 static subcircuit_info_t convex_union(
+    const Circuit *circ,
     const subcircuit_info_t &subcircuit_info0,
     const subcircuit_info_t &subcircuit_info1) {
   const VertexSet &verts0 = subcircuit_info0.verts;
@@ -90,6 +99,14 @@ static subcircuit_info_t convex_union(
   const VertexSet &verts1 = subcircuit_info1.verts;
   const VertexSet &preds1 = subcircuit_info1.preds;
   const VertexSet &succs1 = subcircuit_info1.succs;
+
+  std::cout << "*** convex_union() ***" << std::endl;
+  std::cout << "verts0:"; print_vertexset(*circ, verts0); std::cout << std::endl;
+  std::cout << "preds0:"; print_vertexset(*circ, preds0); std::cout << std::endl;
+  std::cout << "succs0:"; print_vertexset(*circ, succs0); std::cout << std::endl;
+  std::cout << "verts1:"; print_vertexset(*circ, verts1); std::cout << std::endl;
+  std::cout << "preds1:"; print_vertexset(*circ, preds1); std::cout << std::endl;
+  std::cout << "succs1:"; print_vertexset(*circ, succs1); std::cout << std::endl;
 
   // verts = verts0 ∪ verts1
   VertexSet verts = verts0;
@@ -100,10 +117,12 @@ static subcircuit_info_t convex_union(
   std::set_difference(
       preds0.begin(), preds0.end(), verts1.begin(), verts1.end(),
       std::inserter(p0mv1, p0mv1.begin()));
+  std::cout << "p0mv1:"; print_vertexvec(*circ, p0mv1); std::cout << std::endl;
   VertexVec p1mv0;
   std::set_difference(
       preds1.begin(), preds1.end(), verts0.begin(), verts0.end(),
       std::inserter(p1mv0, p1mv0.begin()));
+  std::cout << "p1mv0:"; print_vertexvec(*circ, p1mv0); std::cout << std::endl;
   VertexSet preds{p0mv1.begin(), p0mv1.end()};
   preds.insert(p1mv0.begin(), p1mv0.end());
 
@@ -112,12 +131,18 @@ static subcircuit_info_t convex_union(
   std::set_difference(
       succs0.begin(), succs0.end(), verts1.begin(), verts1.end(),
       std::inserter(s0mv1, s0mv1.begin()));
+  std::cout << "s0mv1:"; print_vertexvec(*circ, s0mv1); std::cout << std::endl;
   VertexVec s1mv0;
   std::set_difference(
       succs1.begin(), succs1.end(), verts0.begin(), verts0.end(),
       std::inserter(s1mv0, s1mv0.begin()));
+  std::cout << "s1mv0:"; print_vertexvec(*circ, s1mv0); std::cout << std::endl;
   VertexSet succs{s0mv1.begin(), s0mv1.end()};
   succs.insert(s1mv0.begin(), s1mv0.end());
+
+  std::cout << "verts:"; print_vertexset(*circ, verts); std::cout << std::endl;
+  std::cout << "preds:"; print_vertexset(*circ, preds); std::cout << std::endl;
+  std::cout << "succs:"; print_vertexset(*circ, succs); std::cout << std::endl;
 
   return {verts, preds, succs};
 }
@@ -201,7 +226,7 @@ class SubcircuitFinder {
         subcircuit_infos.erase(subcircuit_infos.begin() + i1);
         subcircuit_infos.erase(subcircuit_infos.begin() + i0);
         subcircuit_infos.push_back(
-            convex_union(subcircuit_info0, subcircuit_info1));
+            convex_union(circ_, subcircuit_info0, subcircuit_info1));
       }
     }
     std::vector<VertexSet> subcircuits;
