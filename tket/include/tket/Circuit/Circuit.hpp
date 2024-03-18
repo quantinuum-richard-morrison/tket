@@ -415,6 +415,45 @@ class Circuit {
    */
   void assert_valid() const;
 
+  void print_subcircuit(const Subcircuit &subcirc) {
+    std::cout << "------" << std::endl;
+    std::cout << "verts: {";
+    for (const Vertex &v : subcirc.verts) {
+      std::cout << get_Op_ptr_from_Vertex(v)->get_name() << ", ";
+    }
+    std::cout << "}" << std::endl;
+    std::cout << "q_in: {";
+    for (const Edge &e : subcirc.q_in_hole) {
+      std::cout << get_Op_ptr_from_Vertex(source(e))->get_name() << "-->"
+                << get_Op_ptr_from_Vertex(target(e))->get_name() << ", ";
+    }
+    std::cout << "}" << std::endl;
+    std::cout << "q_out: {";
+    for (const Edge &e : subcirc.q_out_hole) {
+      std::cout << get_Op_ptr_from_Vertex(source(e))->get_name() << "-->"
+                << get_Op_ptr_from_Vertex(target(e))->get_name() << ", ";
+    }
+    std::cout << "}" << std::endl;
+    std::cout << "c_in: {";
+    for (const Edge &e : subcirc.c_in_hole) {
+      std::cout << get_Op_ptr_from_Vertex(source(e))->get_name() << "-->"
+                << get_Op_ptr_from_Vertex(target(e))->get_name() << ", ";
+    }
+    std::cout << "}" << std::endl;
+    std::cout << "c_out: {";
+    for (const Edge &e : subcirc.c_out_hole) {
+      std::cout << get_Op_ptr_from_Vertex(source(e))->get_name() << "-->"
+                << get_Op_ptr_from_Vertex(target(e))->get_name() << ", ";
+    }
+    std::cout << "}" << std::endl;
+    std::cout << "b_out: {";
+    for (const Edge &e : subcirc.b_future) {
+      std::cout << get_Op_ptr_from_Vertex(source(e))->get_name() << "-->"
+                << get_Op_ptr_from_Vertex(target(e))->get_name() << ", ";
+    }
+    std::cout << "}" << std::endl;
+  }
+
   /* getters */
   // returns the vector of input/output vertices to dag, ordered by register
   VertexVec all_inputs() const;

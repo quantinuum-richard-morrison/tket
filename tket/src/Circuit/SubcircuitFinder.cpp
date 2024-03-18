@@ -18,6 +18,7 @@
 #include <iterator>
 #include <memory>
 #include <optional>
+#include <ostream>
 #include <tkassert/Assert.hpp>
 #include <vector>
 
@@ -36,22 +37,45 @@ typedef struct {
                     // themselves in it
 } subcircuit_info_t;
 
+void print_vertexset(const Circuit & circ, const VertexSet &verts) {
+  std::cout << "{";
+  for (const Vertex &v : verts) {
+    std::cout << circ.get_Op_ptr_from_Vertex(v)->get_name() << ",";
+  }
+  std::cout << "}";
+}
+
+void print_subcircuit_info(const Circuit &circ, const subcircuit_info_t &info) {
+  std::cout << "[";
+  std::cout << "verts: "; print_vertexset(circ, info.verts);
+  std::cout << ", preds: "; print_vertexset(circ, info.preds);
+  std::cout << ", succs: "; print_vertexset(circ, info.succs);
+  std::cout << "]";
+}
+
 // Test whether the union of two connected convex subcircuits is connected.
 static bool union_is_connected(
+    const Circuit *circ,
     const subcircuit_info_t &subcircuit_info0,
     const subcircuit_info_t &subcircuit_info1) {
+  std::cout << "*** union_is_connected() ***" << std::endl;
+  print_subcircuit_info(*circ, subcircuit_info0); std::cout << std::endl;
+  print_subcircuit_info(*circ, subcircuit_info1); std::cout << std::endl;
   const VertexSet &verts0 = subcircuit_info0.verts;
   const VertexSet &verts1 = subcircuit_info1.verts;
   for (const Vertex &v : subcircuit_info0.succs) {
     if (verts1.contains(v)) {
+      std::cout << "true (1)" << std::endl;
       return true;
     }
   }
   for (const Vertex &v : subcircuit_info1.succs) {
     if (verts0.contains(v)) {
+      std::cout << "true (2)" << std::endl;
       return true;
     }
   }
+  std::cout << "false" << std::endl;
   return false;
 }
 
@@ -128,9 +152,18 @@ static std::set<std::pair<Vertex, Vertex>> order_relations(
 class SubcircuitFinder {
  public:
   SubcircuitFinder(Circuit *circ /*const*/)
-      : circ_(circ), order_relations_(order_relations(circ)) {}
+      : circ_(circ), order_relations_(order_relations(circ)) {
+        std::cout << *circ_ << std::endl;
+        std::cout << "order_relations_: [";
+        for (const auto & vpair : order_relations_) {
+          std::cout << circ_->get_Op_ptr_from_Vertex(vpair.first)->get_name() << "<=" << circ_->get_Op_ptr_from_Vertex(vpair.second)->get_name() << ", ";
+        }
+        std::cout << "]" << std::endl;
+      }
   std::vector<VertexSet> find_subcircuits(
       std::function<bool(Op_ptr)> criterion) {
+    std::cout << "circ:" << std::endl;
+    std::cout << *circ_ << std::endl;
     // Find a maximal partition of the vertices satisfying the criterion into
     // connected convex subcircuits. We use a greedy algorithm, beginning with
     // the trivial partition into singletons, and then repeatedly looking for a
@@ -146,6 +179,13 @@ class SubcircuitFinder {
       }
     }
     while (true) {
+      std::cout << "************ Current partition ************" << std::endl;
+      for (const subcircuit_info_t & info : subcircuit_infos) {
+        std::cout << "======" << std::endl;
+        print_subcircuit_info(*circ_, info);
+        std::cout << std::endl;
+      }
+      std::cout << "*******************************************" << std::endl;
       // If possible, find a mergeable pair of subcircuits and merge them.
       std::optional<std::pair<std::size_t, std::size_t>> indices =
           find_mergeable_pair(subcircuit_infos);
@@ -177,6 +217,9 @@ class SubcircuitFinder {
   bool union_is_convex(
       const subcircuit_info_t &subcircuit_info0,
       const subcircuit_info_t &subcircuit_info1) {
+    std::cout << "*** union_is_convex() ***" << std::endl;
+    print_subcircuit_info(*circ_, subcircuit_info0); std::cout << std::endl;
+    print_subcircuit_info(*circ_, subcircuit_info1); std::cout << std::endl;
     const VertexSet &preds0 = subcircuit_info0.preds;
     const VertexSet &succs0 = subcircuit_info0.succs;
     const VertexSet &preds1 = subcircuit_info1.preds;
@@ -184,6 +227,7 @@ class SubcircuitFinder {
     for (const Vertex &v0 : succs0) {
       for (const Vertex &v1 : preds1) {
         if (order_relations_.contains({v0, v1})) {
+          std::cout << "false (1)" << std::endl;
           return false;
         }
       }
@@ -191,10 +235,12 @@ class SubcircuitFinder {
     for (const Vertex &v1 : succs1) {
       for (const Vertex &v0 : preds0) {
         if (order_relations_.contains({v1, v0})) {
+          std::cout << "false (2)" << std::endl;
           return false;
         }
       }
     }
+    std::cout << "true" << std::endl;
     return true;
   }
 
@@ -208,7 +254,7 @@ class SubcircuitFinder {
       for (std::size_t i1 = i0 + 1; i1 < n_subcircuits; i1++) {
         const subcircuit_info_t &subcircuit_info0 = subcircuit_infos[i0];
         const subcircuit_info_t &subcircuit_info1 = subcircuit_infos[i1];
-        if (union_is_connected(subcircuit_info0, subcircuit_info1) &&
+        if (union_is_connected(circ_, subcircuit_info0, subcircuit_info1) &&
             union_is_convex(subcircuit_info0, subcircuit_info1)) {
           return std::pair<std::size_t, std::size_t>{i0, i1};
         }
