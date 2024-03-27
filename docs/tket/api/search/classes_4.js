@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['edgedoesnotexisterror_2588',['EdgeDoesNotExistError',['../classtket_1_1graphs_1_1EdgeDoesNotExistError.html',1,'tket::graphs']]],
-  ['edgeproperties_2589',['EdgeProperties',['../structtket_1_1EdgeProperties.html',1,'tket']]],
-  ['expbox_2590',['ExpBox',['../classtket_1_1ExpBox.html',1,'tket']]],
-  ['explicitmodifierop_2591',['ExplicitModifierOp',['../classtket_1_1ExplicitModifierOp.html',1,'tket']]],
-  ['explicitpredicateop_2592',['ExplicitPredicateOp',['../classtket_1_1ExplicitPredicateOp.html',1,'tket']]]
+  ['edgedoesnotexisterror_2591',['EdgeDoesNotExistError',['../classtket_1_1graphs_1_1EdgeDoesNotExistError.html',1,'tket::graphs']]],
+  ['edgeproperties_2592',['EdgeProperties',['../structtket_1_1EdgeProperties.html',1,'tket']]],
+  ['expbox_2593',['ExpBox',['../classtket_1_1ExpBox.html',1,'tket']]],
+  ['explicitmodifierop_2594',['ExplicitModifierOp',['../classtket_1_1ExplicitModifierOp.html',1,'tket']]],
+  ['explicitpredicateop_2595',['ExplicitPredicateOp',['../classtket_1_1ExplicitPredicateOp.html',1,'tket']]]
 ];

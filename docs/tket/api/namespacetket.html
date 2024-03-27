@@ -1598,6 +1598,9 @@ Functions</h2></td></tr>
 <tr class="memitem:abc3ec559261361a9fea3eea90f490ebc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#abc3ec559261361a9fea3eea90f490ebc">gen_clifford_resynthesis_pass</a> (std::optional&lt; std::function&lt; <a class="el" href="classtket_1_1Circuit.html">Circuit</a>(const <a class="el" href="classtket_1_1Circuit.html">Circuit</a> &amp;)&gt;&gt; transform=std::nullopt, bool allow_swaps=true)</td></tr>
 <tr class="memdesc:abc3ec559261361a9fea3eea90f490ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass to resynthesise Clifford subcircuits and simplify using Clifford rules.  <a href="namespacetket.html#abc3ec559261361a9fea3eea90f490ebc">More...</a><br /></td></tr>
 <tr class="separator:abc3ec559261361a9fea3eea90f490ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8905267410c8af28392dab54be292c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a2b8905267410c8af28392dab54be292c">gen_clifford_push_through_pass</a> ()</td></tr>
+<tr class="memdesc:a2b8905267410c8af28392dab54be292c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass that simplifies circuits by resynthesising Clifford subcircuits before end of circuit measurements as a mutual diagonalisation circuit and classical postprocessing.  <a href="namespacetket.html#a2b8905267410c8af28392dab54be292c">More...</a><br /></td></tr>
+<tr class="separator:a2b8905267410c8af28392dab54be292c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af35a5f42c010b14ec9aa642d9767b3bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#af35a5f42c010b14ec9aa642d9767b3bc">gen_flatten_relabel_registers_pass</a> (const std::string &amp;label)</td></tr>
 <tr class="memdesc:af35a5f42c010b14ec9aa642d9767b3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass to remove empty Quantum edges from a <a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> and then relabel all <a class="el" href="classtket_1_1Qubit.html" title="Location holding a qubit.">Qubit</a> to some new register defined by a passed label.  <a href="namespacetket.html#af35a5f42c010b14ec9aa642d9767b3bc">More...</a><br /></td></tr>
 <tr class="separator:af35a5f42c010b14ec9aa642d9767b3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2113,6 +2116,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad0c908cfd0f80affc029c6ee130bcbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a249157ea6b8b920e80d7c4060537c22a"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a249157ea6b8b920e80d7c4060537c22a">c_debug_default_name</a> ()</td></tr>
 <tr class="separator:a249157ea6b8b920e80d7c4060537c22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339824ff3f186b01693b378b0e11e2b9"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a339824ff3f186b01693b378b0e11e2b9">c_permutation_scratch_name</a> ()</td></tr>
+<tr class="separator:a339824ff3f186b01693b378b0e11e2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e7bbef2ea3c726cc17c52e29fe3838f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetket.html#a8e7bbef2ea3c726cc17c52e29fe3838f">tri_lexicographical_comparison</a> (const <a class="el" href="namespacetket.html#ab344d13bc7d369470bdd580e9671c764">dist_vec</a> &amp;dist1, const <a class="el" href="namespacetket.html#ab344d13bc7d369470bdd580e9671c764">dist_vec</a> &amp;dist2)</td></tr>
 <tr class="separator:a8e7bbef2ea3c726cc17c52e29fe3838f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a341757251e63fcd3f5051c6a419ad53f"><td class="memTemplParams" colspan="2">template&lt;typename BoxT &gt; </td></tr>
@@ -2382,7 +2387,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00319">319</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00320">320</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -2398,7 +2403,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00318">318</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00319">319</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -3079,7 +3084,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00321">321</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00322">322</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -3095,7 +3100,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00322">322</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00323">323</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -3672,7 +3677,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00315">315</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00316">316</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -3688,7 +3693,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00314">314</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00315">315</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -3777,7 +3782,7 @@ Variables</h2></td></tr>
 
 <p>A register of locations sharing the same name. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00325">325</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00326">326</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -4193,7 +4198,7 @@ template&lt;typename A , typename B &gt; </div>
 
 <p>A correspondence between two sets of unit IDs. </p>
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00302">302</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00303">303</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -4225,7 +4230,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00311">311</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00312">312</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -4241,7 +4246,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00312">312</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00313">313</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -4257,7 +4262,7 @@ template&lt;typename A , typename B &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00310">310</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00311">311</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -5245,7 +5250,7 @@ template&lt;typename A , typename B &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>passpointer to perform architecture aware synthesis </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00405">405</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00423">423</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -6197,6 +6202,25 @@ template&lt;typename A , typename B &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="UnitID_8cpp_source.html#l00084">84</a> of file <a class="el" href="UnitID_8cpp_source.html">UnitID.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a339824ff3f186b01693b378b0e11e2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339824ff3f186b01693b378b0e11e2b9">&#9670;&nbsp;</a></span>c_permutation_scratch_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; tket::c_permutation_scratch_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="UnitID_8cpp_source.html#l00120">120</a> of file <a class="el" href="UnitID_8cpp_source.html">UnitID.cpp</a>.</p>
 
 </div>
 </div>
@@ -8066,7 +8090,7 @@ template&lt;&gt; </div>
 <p>It is the caller's responsibility to provide a valid transform: there are no checks on this.</p>
 <dl class="section return"><dt>Returns</dt><dd>compilation pass that applies the supplied transform </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00882">882</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00900">900</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -8393,7 +8417,7 @@ template&lt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00622">622</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00640">640</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -8439,7 +8463,7 @@ template&lt;&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>PassPtr </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00623">623</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00641">641</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10074,7 +10098,7 @@ template&lt;arithmetic T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00687">687</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00705">705</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10138,6 +10162,28 @@ template&lt;arithmetic T&gt; </div>
 
 </div>
 </div>
+<a id="a2b8905267410c8af28392dab54be292c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b8905267410c8af28392dab54be292c">&#9670;&nbsp;</a></span>gen_clifford_push_through_pass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetket.html#a16f42886ddb3e4e93daaacdd772886b1">PassPtr</a> tket::gen_clifford_push_through_pass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pass that simplifies circuits by resynthesising Clifford subcircuits before end of circuit measurements as a mutual diagonalisation circuit and classical postprocessing. </p>
+<dl class="section return"><dt>Returns</dt><dd>pass to resynthesise pre end of circuit measure Clifford subcircuits </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00177">177</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+
+</div>
+</div>
 <a id="abc3ec559261361a9fea3eea90f490ebc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc3ec559261361a9fea3eea90f490ebc">&#9670;&nbsp;</a></span>gen_clifford_resynthesis_pass()</h2>
 
@@ -10174,7 +10220,7 @@ template&lt;arithmetic T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pass to perform Clifford resynthesis </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00165">165</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00166">166</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10194,7 +10240,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00143">143</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00144">144</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10233,7 +10279,7 @@ template&lt;arithmetic T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00839">839</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00857">857</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10281,7 +10327,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00299">299</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00317">317</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10311,7 +10357,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00547">547</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00565">565</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10341,7 +10387,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00288">288</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00306">306</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10371,7 +10417,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00536">536</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00554">554</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10407,7 +10453,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00129">129</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00130">130</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10430,7 +10476,7 @@ template&lt;arithmetic T&gt; </div>
 <p>Pass to remove empty Quantum edges from a <a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> and then relabel all <a class="el" href="classtket_1_1Qubit.html" title="Location holding a qubit.">Qubit</a> to some new register defined by a passed label. </p>
 <p>Qubits removed from the <a class="el" href="classtket_1_1Circuit.html" title="A circuit.">Circuit</a> are preserved in the bimap, but not updated to a new labelling. </p>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00176">176</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00194">194</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10466,7 +10512,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00279">279</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00297">297</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10541,7 +10587,7 @@ template&lt;arithmetic T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>passpointer to perform architecture aware synthesis </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00522">522</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00540">540</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10589,7 +10635,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00258">258</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00276">276</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10609,7 +10655,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00710">710</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00728">728</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10629,7 +10675,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00734">734</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00752">752</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10659,7 +10705,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00756">756</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00774">774</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10679,7 +10725,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00221">221</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00239">239</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10740,7 +10786,7 @@ template&lt;arithmetic T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>passpointer to perfomr the mapping </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00354">354</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00372">372</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10776,7 +10822,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00047">47</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00048">48</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10823,7 +10869,7 @@ template&lt;arithmetic T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>rebase pass </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00076">76</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00077">77</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10846,7 +10892,7 @@ template&lt;arithmetic T&gt; </div>
 <p>Pass to rename some or all qubits according to the given map. </p>
 <p>Qubits in the map that do not occur in the circuit are ignored. </p>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00201">201</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00219">219</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10876,7 +10922,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00315">315</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00333">333</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10922,7 +10968,7 @@ template&lt;arithmetic T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00815">815</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00833">833</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10952,7 +10998,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00796">796</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00814">814</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -10988,7 +11034,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00108">108</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00109">109</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -11018,7 +11064,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00789">789</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00807">807</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -11038,7 +11084,7 @@ template&lt;arithmetic T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00588">588</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00606">606</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -11808,7 +11854,7 @@ circuit has no symbolic parameters</dd></dl>
 <p>If squash=true (default), the <code><a class="el" href="namespacetket.html#aeefc21d2bb61add1f89468ef9e61ee3a" title="Turns all PhasedX and NPhasedX gates into global gates.">GlobalisePhasedX()</a>.apply</code> method will always return true. For squash=false, <code>apply()</code> will return true if the circuit was changed and false otherwise.</p>
 <p>It is not recommended to use this pass with symbolic expressions, as in certain cases a blow-up in symbolic expression sizes may occur. </p>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00856">856</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00874">874</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -13041,7 +13087,7 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00148">148</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00149">149</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -13093,7 +13139,7 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>PassPtr </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00602">602</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00620">620</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -14767,7 +14813,7 @@ template&lt;&gt; </div>
 
 <p>Builds a sequence of PauliSimp (gen_synthesise_pauli_graph) and FullPeepholeOptimise. </p>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00850">850</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00868">868</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -14795,7 +14841,7 @@ template&lt;&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00659">659</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00677">677</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -15595,7 +15641,7 @@ template&lt;&gt; </div>
 <p>@ pre n &lt; 32</p>
 <dl class="section return"><dt>Returns</dt><dd>compilation pass that performs rounding </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00871">871</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00889">889</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -15964,7 +16010,7 @@ template&lt;typename BoxT &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00640">640</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PassGenerators_8cpp_source.html#l00658">658</a> of file <a class="el" href="PassGenerators_8cpp_source.html">PassGenerators.cpp</a>.</p>
 
 </div>
 </div>
@@ -17551,7 +17597,7 @@ template&lt;class Unit_T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00141">141</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00142">142</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
@@ -17608,7 +17654,7 @@ template&lt;typename UnitA , typename UnitB &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>whether any changes were made to the maps </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00360">360</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UnitID_8hpp_source.html#l00361">361</a> of file <a class="el" href="UnitID_8hpp_source.html">UnitID.hpp</a>.</p>
 
 </div>
 </div>
