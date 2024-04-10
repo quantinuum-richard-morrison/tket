@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2024-04-08 16:10:40</td>
+      <td>2024-04-10 16:39:31</td>
     </tr>
   </table>
 </div>
@@ -81,13 +81,13 @@
     </tr>
     <tr>
       <td>
-        <a href="#l466">tket::CircPool::ControlDecompError::ControlDecompError(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a>
+        <a href="#l472">tket::CircPool::ControlDecompError::ControlDecompError(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a>
       </td>
       <td>
-        <a href="#l466">466</a>
+        <a href="#l472">472</a>
       </td>
       <td>
-        <a href="#l466"> not called</a>
+        <a href="#l472"> not called</a>
       </td>
     </tr>
   </table>
@@ -4099,7 +4099,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** Unwrap NPhasedX, into number_of_qubits PhasedX gates */</span><span class="w"></span></td>
+      <td class="src "><span class="cm">/** Equivalent to AAMS, using a TK2 and Rz gates */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l445" href="#l445">445</a></td>
@@ -4108,7 +4108,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">NPhasedX_using_PhasedX</span><span class="p">(</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">AAMS_using_TK2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi1</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l446" href="#l446">446</a></td>
@@ -4117,7 +4117,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number_of_qubits</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l447" href="#l447">447</a></td>
@@ -4126,7 +4126,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">/** Equivalent to AAMS, using CX, Rz and U3 gates */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l448" href="#l448">448</a></td>
@@ -4135,7 +4135,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/** TK2(a, b, c)-equivalent circuit, using normalised TK2 and single-qb gates */</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">AAMS_using_CX</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi1</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l449" href="#l449">449</a></td>
@@ -4144,7 +4144,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_normalised_TK2</span><span class="p">(</span><span class="w"></span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l450" href="#l450">450</a></td>
@@ -4153,7 +4153,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm">/** Unwrap NPhasedX, into number_of_qubits PhasedX gates */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l451" href="#l451">451</a></td>
@@ -4162,7 +4162,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">NPhasedX_using_PhasedX</span><span class="p">(</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l452" href="#l452">452</a></td>
@@ -4171,7 +4171,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="c1">// converts a TK1 gate to a PhasedXRz gate</span></td>
+      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number_of_qubits</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l453" href="#l453">453</a></td>
@@ -4180,7 +4180,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_PhasedXRz</span><span class="p">(</span><span class="w"></span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l454" href="#l454">454</a></td>
@@ -4189,7 +4189,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm">/** TK2(a, b, c)-equivalent circuit, using normalised TK2 and single-qb gates */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l455" href="#l455">455</a></td>
@@ -4198,7 +4198,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">TK2_using_normalised_TK2</span><span class="p">(</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l456" href="#l456">456</a></td>
@@ -4207,7 +4207,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzrx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l457" href="#l457">457</a></td>
@@ -4225,7 +4225,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="c1">// converts a TK1 gate to a PhasedXRz gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l459" href="#l459">459</a></td>
@@ -4234,7 +4234,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_PhasedXRz</span><span class="p">(</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l460" href="#l460">460</a></td>
@@ -4243,7 +4243,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzsx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l461" href="#l461">461</a></td>
@@ -4261,7 +4261,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_tk1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzrx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l463" href="#l463">463</a></td>
@@ -4279,7 +4279,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">ControlDecompError</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l465" href="#l465">465</a></td>
@@ -4288,7 +4288,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l466" href="#l466">466</a></td>
@@ -4296,8 +4296,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">ControlDecompError</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">message</span><span class="p">)</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_rzsx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l467" href="#l467">467</a></td>
@@ -4305,8 +4305,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l468" href="#l468">468</a></td>
@@ -4315,7 +4315,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">};</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">tk1_to_tk1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gamma</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l469" href="#l469">469</a></td>
@@ -4333,7 +4333,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">ControlDecompError</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l471" href="#l471">471</a></td>
@@ -4342,7 +4342,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Get an n-qubit incrementer circuit with linear depth and O(n^2) gate</span></td>
+      <td class="src "><span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l472" href="#l472">472</a></td>
@@ -4350,8 +4350,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm"> * count. There exists a global phase difference</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">ControlDecompError</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">message</span><span class="p">)</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l473" href="#l473">473</a></td>
@@ -4359,8 +4359,8 @@
       </td>
       <td class="linedecision">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l474" href="#l474">474</a></td>
@@ -4369,7 +4369,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="p">};</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l475" href="#l475">475</a></td>
@@ -4378,7 +4378,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n number of qubits</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l476" href="#l476">476</a></td>
@@ -4387,7 +4387,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param lsb set to false if we don&#39;t want to toggle the least significant bit</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l477" href="#l477">477</a></td>
@@ -4396,7 +4396,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CRx, X</span></td>
+      <td class="src "><span class="cm"> * @brief Get an n-qubit incrementer circuit with linear depth and O(n^2) gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l478" href="#l478">478</a></td>
@@ -4405,7 +4405,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * count. There exists a global phase difference</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l479" href="#l479">479</a></td>
@@ -4414,7 +4414,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_linear_depth</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lsb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l480" href="#l480">480</a></td>
@@ -4423,7 +4423,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l481" href="#l481">481</a></td>
@@ -4432,7 +4432,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> * @param n number of qubits</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l482" href="#l482">482</a></td>
@@ -4441,7 +4441,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Implement CnU gate with linear depth and O(n^2) gate count.</span></td>
+      <td class="src "><span class="cm"> * @param lsb set to false if we don&#39;t want to toggle the least significant bit</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l483" href="#l483">483</a></td>
@@ -4450,7 +4450,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CRx, X</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l484" href="#l484">484</a></td>
@@ -4459,7 +4459,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> *</span></td>
+      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l485" href="#l485">485</a></td>
@@ -4468,7 +4468,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n number of controls</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_linear_depth</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">lsb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l486" href="#l486">486</a></td>
@@ -4477,7 +4477,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param u the controlled 2x2 unitary matrix</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l487" href="#l487">487</a></td>
@@ -4486,7 +4486,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CRx, TK1, U1, and CU3</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l488" href="#l488">488</a></td>
@@ -4495,7 +4495,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @brief Implement CnU gate with linear depth and O(n^2) gate count.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l489" href="#l489">489</a></td>
@@ -4504,7 +4504,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_linear_depth_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * https://arxiv.org/abs/2203.11882</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l490" href="#l490">490</a></td>
@@ -4513,7 +4513,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l491" href="#l491">491</a></td>
@@ -4522,7 +4522,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_1_qubit</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @param n number of controls</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l492" href="#l492">492</a></td>
@@ -4531,7 +4531,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @param u the controlled 2x2 unitary matrix</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l493" href="#l493">493</a></td>
@@ -4540,7 +4540,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_n_qubits</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CRx, TK1, U1, and CU3</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l494" href="#l494">494</a></td>
@@ -4549,7 +4549,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l495" href="#l495">495</a></td>
@@ -4558,7 +4558,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_normal_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_linear_depth_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l496" href="#l496">496</a></td>
@@ -4576,7 +4576,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_gray_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_1_qubit</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l498" href="#l498">498</a></td>
@@ -4594,7 +4594,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRy_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">incrementer_borrow_n_qubits</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l500" href="#l500">500</a></td>
@@ -4612,7 +4612,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_normal_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l502" href="#l502">502</a></td>
@@ -4621,7 +4621,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Given a 2x2 numerical unitary matrix U and the number of control</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l503" href="#l503">503</a></td>
@@ -4630,7 +4630,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * qubits n return the decomposed CnU gate</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnX_gray_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l504" href="#l504">504</a></td>
@@ -4639,7 +4639,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l505" href="#l505">505</a></td>
@@ -4648,7 +4648,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param u</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnRy_normal_decomp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Op_ptr</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">arity</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l506" href="#l506">506</a></td>
@@ -4657,7 +4657,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CX, TK1, U1, and CU3</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l507" href="#l507">507</a></td>
@@ -4666,7 +4666,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l508" href="#l508">508</a></td>
@@ -4675,7 +4675,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @brief Given a 2x2 numerical unitary matrix U and the number of control</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l509" href="#l509">509</a></td>
@@ -4684,7 +4684,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * qubits n return the decomposed CnU gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l510" href="#l510">510</a></td>
@@ -4693,7 +4693,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> * @param n</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l511" href="#l511">511</a></td>
@@ -4702,7 +4702,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Given a gate and the number of control qubits n,</span></td>
+      <td class="src "><span class="cm"> * @param u</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l512" href="#l512">512</a></td>
@@ -4711,7 +4711,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * return the n-qubit controlled version of that gate using the gray code</span></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CX, TK1, U1, and CU3</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l513" href="#l513">513</a></td>
@@ -4720,7 +4720,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * decomposition method. This method can handle gates with symbolic parameters</span></td>
+      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l514" href="#l514">514</a></td>
@@ -4729,7 +4729,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix2cd</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l515" href="#l515">515</a></td>
@@ -4738,7 +4738,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param gate</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l516" href="#l516">516</a></td>
@@ -4747,7 +4747,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit containing CX, CRx, CRy, CRz, CU1, TK1, U1, and CU3</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l517" href="#l517">517</a></td>
@@ -4756,7 +4756,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @brief Given a gate and the number of control qubits n,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l518" href="#l518">518</a></td>
@@ -4765,7 +4765,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Gate_ptr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gate</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * return the n-qubit controlled version of that gate using the gray code</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l519" href="#l519">519</a></td>
@@ -4774,7 +4774,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * decomposition method. This method can handle gates with symbolic parameters</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l520" href="#l520">520</a></td>
@@ -4783,7 +4783,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> * @param n</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l521" href="#l521">521</a></td>
@@ -4792,7 +4792,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Linear decomposition method for n-qubit controlled SU(2) gate</span></td>
+      <td class="src "><span class="cm"> * @param gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l522" href="#l522">522</a></td>
@@ -4801,7 +4801,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * expressed as Rz(alpha)Ry(theta)Rz(beta) (multiplication order).</span></td>
+      <td class="src "><span class="cm"> * @return Circuit containing CX, CRx, CRy, CRz, CU1, TK1, U1, and CU3</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l523" href="#l523">523</a></td>
@@ -4810,7 +4810,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * Implements lemma 7.9 in https://arxiv.org/abs/quant-ph/9503016</span></td>
+      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l524" href="#l524">524</a></td>
@@ -4819,7 +4819,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param n</span></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnU_gray_code_decomp</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Gate_ptr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gate</span><span class="p">);</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l525" href="#l525">525</a></td>
@@ -4828,7 +4828,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param alpha</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l526" href="#l526">526</a></td>
@@ -4837,7 +4837,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param theta</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l527" href="#l527">527</a></td>
@@ -4846,7 +4846,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @param beta</span></td>
+      <td class="src "><span class="cm"> * @brief Linear decomposition method for n-qubit controlled SU(2) gate</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l528" href="#l528">528</a></td>
@@ -4855,7 +4855,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @return Circuit</span></td>
+      <td class="src "><span class="cm"> * expressed as Rz(alpha)Ry(theta)Rz(beta) (multiplication order).</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l529" href="#l529">529</a></td>
@@ -4864,7 +4864,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * Implements lemma 7.9 in https://arxiv.org/abs/quant-ph/9503016</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l530" href="#l530">530</a></td>
@@ -4873,7 +4873,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnSU2_linear_decomp</span><span class="p">(</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @param n</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l531" href="#l531">531</a></td>
@@ -4882,7 +4882,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> * @param alpha</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l532" href="#l532">532</a></td>
@@ -4891,7 +4891,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @param theta</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l533" href="#l533">533</a></td>
@@ -4900,7 +4900,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace CircPool</span></td>
+      <td class="src "><span class="cm"> * @param beta</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l534" href="#l534">534</a></td>
@@ -4909,7 +4909,7 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @return Circuit</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l535" href="#l535">535</a></td>
@@ -4918,10 +4918,64 @@
       <td class="linedecision">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace tket</span></td>
+      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l536" href="#l536">536</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="n">Circuit</span><span class="w"> </span><span class="nf">CnSU2_linear_decomp</span><span class="p">(</span><span class="w"></span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l537" href="#l537">537</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Expr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">beta</span><span class="p">);</span><span class="w"></span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l538" href="#l538">538</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l539" href="#l539">539</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace CircPool</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l540" href="#l540">540</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l541" href="#l541">541</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linedecision">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">// namespace tket</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l542" href="#l542">542</a></td>
       <td class="linebranch">
       </td>
       <td class="linedecision">
