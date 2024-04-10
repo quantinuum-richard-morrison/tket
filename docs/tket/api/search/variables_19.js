@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['z_4937',['z',['../structtket_1_1BoolPauli.html#a48f9b6bc0fb4525a040a31ff4e6a146c',1,'tket::BoolPauli']]],
-  ['z_4938',['Z',['../GateUnitaryMatrixFixedMatrices_8cpp.html#a50e494b6c0479f509addc00437f7d321',1,'Z():&#160;GateUnitaryMatrixFixedMatrices.cpp'],['../namespacestd__clifford__decomp.html#ad6c61526bfb84c3730bdbae5332d1862',1,'std_clifford_decomp.Z()']]],
-  ['zmat_4939',['zmat',['../classtket_1_1SymplecticTableau.html#a7787dbc108b2f52edeb4c6831abcb089',1,'tket::SymplecticTableau']]],
-  ['zxdiagrampybind_4940',['ZXDiagramPybind',['../classtket_1_1zx_1_1ZXDiagram.html#a883d160f7e5a11997e640b984d37eff0',1,'tket::zx::ZXDiagram']]],
-  ['zzmax_4941',['ZZMax',['../GateUnitaryMatrixFixedMatrices_8cpp.html#ac08df0edeeb7f153c7f419cdaeed9c6d',1,'GateUnitaryMatrixFixedMatrices.cpp']]],
-  ['zzmax_5ffidelity_4942',['ZZMax_fidelity',['../structtket_1_1Transforms_1_1TwoQbFidelities.html#a3e633c284dda5f61f4bd9d59aeedd49d',1,'tket::Transforms::TwoQbFidelities']]],
-  ['zzphase_5ffidelity_4943',['ZZPhase_fidelity',['../structtket_1_1Transforms_1_1TwoQbFidelities.html#a57bccc52af2c1e8542374c997e35be37',1,'tket::Transforms::TwoQbFidelities']]]
+  ['z_4944',['z',['../structtket_1_1BoolPauli.html#a48f9b6bc0fb4525a040a31ff4e6a146c',1,'tket::BoolPauli']]],
+  ['z_4945',['Z',['../GateUnitaryMatrixFixedMatrices_8cpp.html#a50e494b6c0479f509addc00437f7d321',1,'Z():&#160;GateUnitaryMatrixFixedMatrices.cpp'],['../namespacestd__clifford__decomp.html#ad6c61526bfb84c3730bdbae5332d1862',1,'std_clifford_decomp.Z()']]],
+  ['zmat_4946',['zmat',['../classtket_1_1SymplecticTableau.html#a7787dbc108b2f52edeb4c6831abcb089',1,'tket::SymplecticTableau']]],
+  ['zxdiagrampybind_4947',['ZXDiagramPybind',['../classtket_1_1zx_1_1ZXDiagram.html#a883d160f7e5a11997e640b984d37eff0',1,'tket::zx::ZXDiagram']]],
+  ['zzmax_4948',['ZZMax',['../GateUnitaryMatrixFixedMatrices_8cpp.html#ac08df0edeeb7f153c7f419cdaeed9c6d',1,'GateUnitaryMatrixFixedMatrices.cpp']]],
+  ['zzmax_5ffidelity_4949',['ZZMax_fidelity',['../structtket_1_1Transforms_1_1TwoQbFidelities.html#a3e633c284dda5f61f4bd9d59aeedd49d',1,'tket::Transforms::TwoQbFidelities']]],
+  ['zzphase_5ffidelity_4950',['ZZPhase_fidelity',['../structtket_1_1Transforms_1_1TwoQbFidelities.html#a57bccc52af2c1e8542374c997e35be37',1,'tket::Transforms::TwoQbFidelities']]]
 ];

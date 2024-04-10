@@ -292,65 +292,67 @@ $(function() {
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keyword">const</span> OpDesc op_descriptor =</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      circuit.get_Op_ptr_from_Vertex(<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>)-&gt;get_desc();</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> (not op_descriptor.is_gate()) or  <span class="comment">// not a gate</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;         circuit.n_out_edges(<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>) ==</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;             0 or  <span class="comment">// vertex is boundary or already detached</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;         circuit.n_in_edges(<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>) == 0;  <span class="comment">// vertex is boundary</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> try_detach_vertex(</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    Circuit &amp;circuit, <span class="keyword">const</span> <a class="code" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a> &amp;<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    VertexDetachmentInfo &amp;detachmentInfo) {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordflow">if</span> (is_apriori_not_detachable(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>)) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">if</span> (try_detach_single_vertex(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>, detachmentInfo)) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (try_detach_vertex_and_successor(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>, detachmentInfo)) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">static</span> VertexDetachmentInfo detach_vertices_if_redundant(</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    Circuit &amp;circuit, <span class="keyword">const</span> <a class="code" href="namespacetket.html#aecaec372664e1c2f33ff81d9a5c58ce2">VertexVec</a> &amp;vertices) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  VertexDetachmentInfo detachmentInfo;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a> : vertices) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    try_detach_vertex(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>, detachmentInfo);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordflow">return</span> detachmentInfo;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="keyword">static</span> <a class="code" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> detach_any_redundant_vertices(Circuit &amp;circuit) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <a class="code" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> bin;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="namespacetket.html#aecaec372664e1c2f33ff81d9a5c58ce2">VertexVec</a> verticesToCheckForRemoval = circuit.vertices_in_order();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keywordflow">while</span> (!verticesToCheckForRemoval.empty()) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">auto</span> detachmentInfo =</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        detach_vertices_if_redundant(circuit, verticesToCheckForRemoval);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    bin.insert(</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        detachmentInfo.detachedVertices.cbegin(),</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        detachmentInfo.detachedVertices.cend());</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    std::swap(</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        verticesToCheckForRemoval, detachmentInfo.detachedVertexPredecessors);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordflow">return</span> bin;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">// this method annihilates all primitives next to each other (accounting for</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">// previous annihilation)</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">// also removes redundant non-classically controlled Z basis gates before a z</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">// basis measurement so that eg. -H-X-X-H- always annihilates to -----</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">  266</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">redundancy_removal</a>(<a class="code" href="classtket_1_1Circuit.html">Circuit</a> &amp;circuit) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <a class="code" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> bin = detach_any_redundant_vertices(circuit);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  circuit.<a class="code" href="classtket_1_1Circuit.html#a87763c01e9430173ebff697ccbe2e762">remove_vertices</a>(</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      bin, <a class="code" href="classtket_1_1Circuit.html#a9ebf9fffcbb5cf57899e25d9358a41cbabafd7322c6e97d25b6299b5d6fe8920b">Circuit::GraphRewiring::No</a>, <a class="code" href="classtket_1_1Circuit.html#ad46024dc8be3d44e15fbcdb474552cc6a93cba07454f06a4a960172bbd6e2a435">Circuit::VertexDeletion::Yes</a>);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordflow">return</span> !bin.empty();</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="namespacetket_1_1Transforms.html#a24c7fb6f008a3cf65c553b858e8ace47">  273</a></span>&#160;<a class="code" href="classtket_1_1Transform.html">Transform</a> <a class="code" href="namespacetket_1_1Transforms.html#a24c7fb6f008a3cf65c553b858e8ace47">remove_redundancies</a>() { <span class="keywordflow">return</span> <a class="code" href="classtket_1_1Transform.html">Transform</a>(<a class="code" href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">redundancy_removal</a>); }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">if</span> (!op_descriptor.is_gate()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordflow">if</span> (op_descriptor.type() == <a class="code" href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a5e35d7fff7b903516cba242ff68fc6d3">OpType::Phase</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordflow">if</span> (circuit.n_out_edges(<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>) == 0 || circuit.n_in_edges(<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>) == 0) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// vertex is boundary or already detached</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> try_detach_vertex(</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    Circuit &amp;circuit, <span class="keyword">const</span> <a class="code" href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">Vertex</a> &amp;<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    VertexDetachmentInfo &amp;detachmentInfo) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span> (is_apriori_not_detachable(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>)) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordflow">if</span> (try_detach_single_vertex(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>, detachmentInfo)) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keywordflow">if</span> (try_detach_vertex_and_successor(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>, detachmentInfo)) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">static</span> VertexDetachmentInfo detach_vertices_if_redundant(</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    Circuit &amp;circuit, <span class="keyword">const</span> <a class="code" href="namespacetket.html#aecaec372664e1c2f33ff81d9a5c58ce2">VertexVec</a> &amp;vertices) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  VertexDetachmentInfo detachmentInfo;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a> : vertices) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    try_detach_vertex(circuit, <a class="code" href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">vertex</a>, detachmentInfo);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">return</span> detachmentInfo;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keyword">static</span> <a class="code" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> detach_any_redundant_vertices(Circuit &amp;circuit) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <a class="code" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> bin;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <a class="code" href="namespacetket.html#aecaec372664e1c2f33ff81d9a5c58ce2">VertexVec</a> verticesToCheckForRemoval = circuit.vertices_in_order();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">while</span> (!verticesToCheckForRemoval.empty()) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">auto</span> detachmentInfo =</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        detach_vertices_if_redundant(circuit, verticesToCheckForRemoval);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    bin.insert(</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        detachmentInfo.detachedVertices.cbegin(),</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        detachmentInfo.detachedVertices.cend());</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    std::swap(</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        verticesToCheckForRemoval, detachmentInfo.detachedVertexPredecessors);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">return</span> bin;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">// this method annihilates all primitives next to each other (accounting for</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">// previous annihilation)</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">// also removes redundant non-classically controlled Z basis gates before a z</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">// basis measurement so that eg. -H-X-X-H- always annihilates to -----</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">  268</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">redundancy_removal</a>(<a class="code" href="classtket_1_1Circuit.html">Circuit</a> &amp;circuit) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <a class="code" href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">VertexSet</a> bin = detach_any_redundant_vertices(circuit);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  circuit.<a class="code" href="classtket_1_1Circuit.html#a87763c01e9430173ebff697ccbe2e762">remove_vertices</a>(</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      bin, <a class="code" href="classtket_1_1Circuit.html#a9ebf9fffcbb5cf57899e25d9358a41cbabafd7322c6e97d25b6299b5d6fe8920b">Circuit::GraphRewiring::No</a>, <a class="code" href="classtket_1_1Circuit.html#ad46024dc8be3d44e15fbcdb474552cc6a93cba07454f06a4a960172bbd6e2a435">Circuit::VertexDeletion::Yes</a>);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">return</span> !bin.empty();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}  <span class="comment">// namespace tket::Transforms</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="namespacetket_1_1Transforms.html#a24c7fb6f008a3cf65c553b858e8ace47">  275</a></span>&#160;<a class="code" href="classtket_1_1Transform.html">Transform</a> <a class="code" href="namespacetket_1_1Transforms.html#a24c7fb6f008a3cf65c553b858e8ace47">remove_redundancies</a>() { <span class="keywordflow">return</span> <a class="code" href="classtket_1_1Transform.html">Transform</a>(<a class="code" href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">redundancy_removal</a>); }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}  <span class="comment">// namespace tket::Transforms</span></div>
 <div class="ttc" id="aBasicOptimisation_8hpp_html"><div class="ttname"><a href="BasicOptimisation_8hpp.html">BasicOptimisation.hpp</a></div></div>
 <div class="ttc" id="aDAGDefs_8hpp_html"><div class="ttname"><a href="DAGDefs_8hpp.html">DAGDefs.hpp</a></div></div>
 <div class="ttc" id="aGate_8hpp_html"><div class="ttname"><a href="Gate_8hpp.html">Gate.hpp</a></div></div>
@@ -363,11 +365,12 @@ $(function() {
 <div class="ttc" id="aclasstket_1_1Circuit_html_ad46024dc8be3d44e15fbcdb474552cc6abafd7322c6e97d25b6299b5d6fe8920b"><div class="ttname"><a href="classtket_1_1Circuit.html#ad46024dc8be3d44e15fbcdb474552cc6abafd7322c6e97d25b6299b5d6fe8920b">tket::Circuit::VertexDeletion::No</a></div><div class="ttdeci">@ No</div></div>
 <div class="ttc" id="aclasstket_1_1Transform_html"><div class="ttname"><a href="classtket_1_1Transform.html">tket::Transform</a></div><div class="ttdoc">A transformation of a circuit that preserves its semantics.</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8hpp_source.html#l00027">Transform.hpp:27</a></div></div>
 <div class="ttc" id="anamespacetket_1_1Transforms_html"><div class="ttname"><a href="namespacetket_1_1Transforms.html">tket::Transforms</a></div><div class="ttdef"><b>Definition:</b> <a href="BasicOptimisation_8cpp_source.html#l00034">BasicOptimisation.cpp:34</a></div></div>
-<div class="ttc" id="anamespacetket_1_1Transforms_html_a24c7fb6f008a3cf65c553b858e8ace47"><div class="ttname"><a href="namespacetket_1_1Transforms.html#a24c7fb6f008a3cf65c553b858e8ace47">tket::Transforms::remove_redundancies</a></div><div class="ttdeci">Transform remove_redundancies()</div><div class="ttdef"><b>Definition:</b> <a href="RedundancyRemoval_8cpp_source.html#l00273">RedundancyRemoval.cpp:273</a></div></div>
-<div class="ttc" id="anamespacetket_1_1Transforms_html_aa8c11bf9ca03ea8c77172db128308b44"><div class="ttname"><a href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">tket::Transforms::redundancy_removal</a></div><div class="ttdeci">bool redundancy_removal(Circuit &amp;circuit)</div><div class="ttdef"><b>Definition:</b> <a href="RedundancyRemoval_8cpp_source.html#l00266">RedundancyRemoval.cpp:266</a></div></div>
+<div class="ttc" id="anamespacetket_1_1Transforms_html_a24c7fb6f008a3cf65c553b858e8ace47"><div class="ttname"><a href="namespacetket_1_1Transforms.html#a24c7fb6f008a3cf65c553b858e8ace47">tket::Transforms::remove_redundancies</a></div><div class="ttdeci">Transform remove_redundancies()</div><div class="ttdef"><b>Definition:</b> <a href="RedundancyRemoval_8cpp_source.html#l00275">RedundancyRemoval.cpp:275</a></div></div>
+<div class="ttc" id="anamespacetket_1_1Transforms_html_aa8c11bf9ca03ea8c77172db128308b44"><div class="ttname"><a href="namespacetket_1_1Transforms.html#aa8c11bf9ca03ea8c77172db128308b44">tket::Transforms::redundancy_removal</a></div><div class="ttdeci">bool redundancy_removal(Circuit &amp;circuit)</div><div class="ttdef"><b>Definition:</b> <a href="RedundancyRemoval_8cpp_source.html#l00268">RedundancyRemoval.cpp:268</a></div></div>
 <div class="ttc" id="anamespacetket_1_1graphs_1_1utils_html_a050fee0366144452df8c98e74b35a76b"><div class="ttname"><a href="namespacetket_1_1graphs_1_1utils.html#a050fee0366144452df8c98e74b35a76b">tket::graphs::utils::vertex</a></div><div class="ttdeci">detail::vertex&lt; T &gt; vertex</div><div class="ttdef"><b>Definition:</b> <a href="Utils_8hpp_source.html#l00036">Utils.hpp:36</a></div></div>
 <div class="ttc" id="anamespacetket_html_a0bf6a146dadc36738e597ab8892a09f5"><div class="ttname"><a href="namespacetket.html#a0bf6a146dadc36738e597ab8892a09f5">tket::Vertex</a></div><div class="ttdeci">boost::graph_traits&lt; DAG &gt;::vertex_descriptor Vertex</div><div class="ttdef"><b>Definition:</b> <a href="DAGDefs_8hpp_source.html#l00073">DAGDefs.hpp:73</a></div></div>
 <div class="ttc" id="anamespacetket_html_a13e81344da4794f2648eb9a7b286fcf3a0cbbe0321e0c40dfa77a159ef6bfad6b"><div class="ttname"><a href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a0cbbe0321e0c40dfa77a159ef6bfad6b">tket::OpType::Measure</a></div><div class="ttdeci">@ Measure</div><div class="ttdoc">Measure a qubit, producing a classical output.</div></div>
+<div class="ttc" id="anamespacetket_html_a13e81344da4794f2648eb9a7b286fcf3a5e35d7fff7b903516cba242ff68fc6d3"><div class="ttname"><a href="namespacetket.html#a13e81344da4794f2648eb9a7b286fcf3a5e35d7fff7b903516cba242ff68fc6d3">tket::OpType::Phase</a></div><div class="ttdeci">@ Phase</div></div>
 <div class="ttc" id="anamespacetket_html_a17e909abfcb8ba201b8c8d6ba7a79bb4"><div class="ttname"><a href="namespacetket.html#a17e909abfcb8ba201b8c8d6ba7a79bb4">tket::VertexList</a></div><div class="ttdeci">std::list&lt; Vertex &gt; VertexList</div><div class="ttdef"><b>Definition:</b> <a href="DAGDefs_8hpp_source.html#l00077">DAGDefs.hpp:77</a></div></div>
 <div class="ttc" id="anamespacetket_html_a218e50abe75d86161d9b5ef3e556877f"><div class="ttname"><a href="namespacetket.html#a218e50abe75d86161d9b5ef3e556877f">tket::get_op_ptr</a></div><div class="ttdeci">Op_ptr get_op_ptr(OpType chosen_type, const Expr &amp;param, unsigned n_qubits)</div><div class="ttdoc">Get an operation with a given type, single parameter and qubit count.</div><div class="ttdef"><b>Definition:</b> <a href="OpPtrFunctions_8cpp_source.html#l00024">OpPtrFunctions.cpp:24</a></div></div>
 <div class="ttc" id="anamespacetket_html_a2993d101c682c3d8e566a19ac49b5285"><div class="ttname"><a href="namespacetket.html#a2993d101c682c3d8e566a19ac49b5285">tket::VertexSet</a></div><div class="ttdeci">std::unordered_set&lt; Vertex &gt; VertexSet</div><div class="ttdef"><b>Definition:</b> <a href="DAGDefs_8hpp_source.html#l00075">DAGDefs.hpp:75</a></div></div>
