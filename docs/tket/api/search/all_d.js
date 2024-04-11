@@ -16,7 +16,7 @@ var searchData=
   ['mappingmanager_2ehpp_1403',['MappingManager.hpp',['../MappingManager_8hpp.html',1,'']]],
   ['mappingmanagererror_1404',['MappingManagerError',['../classtket_1_1MappingManagerError.html#a8d284b261443b7c68f7ae50b5ac7eff1',1,'tket::MappingManagerError::MappingManagerError()'],['../classtket_1_1MappingManagerError.html',1,'tket::MappingManagerError']]],
   ['mappings_1405',['mappings',['../structtket_1_1SubgraphMonomorphisms.html#a4258fe1d3d13e039f9efb774c8564b50',1,'tket::SubgraphMonomorphisms']]],
-  ['match_5fpasses_1406',['match_passes',['../classtket_1_1BasePass.html#add9e71316d2ddf6ee22f99a59dce4d96',1,'tket::BasePass::match_passes(const PassPtr &amp;lhs, const PassPtr &amp;rhs)'],['../classtket_1_1BasePass.html#aa9f9d917d0b08c324c0e20d989e00488',1,'tket::BasePass::match_passes(const PassConditions &amp;lhs, const PassConditions &amp;rhs)']]],
+  ['match_5fpasses_1406',['match_passes',['../classtket_1_1BasePass.html#add9e71316d2ddf6ee22f99a59dce4d96',1,'tket::BasePass::match_passes(const PassPtr &amp;lhs, const PassPtr &amp;rhs)'],['../classtket_1_1BasePass.html#a5e9bbe270cf9c846391bb19f4fb78841',1,'tket::BasePass::match_passes(const PassConditions &amp;lhs, const PassConditions &amp;rhs, bool strict=true)']]],
   ['matching_1407',['Matching',['../namespacetket.html#aaa9022e831653e0daea704d481725e3baca1b12f70c0a8471440324a11e4590af',1,'tket']]],
   ['matrix8cd_1408',['Matrix8cd',['../namespacetket.html#aaa2b97f86243fa7a09b21e1ec946f652',1,'tket']]],
   ['matrixanalysis_2ecpp_1409',['MatrixAnalysis.cpp',['../MatrixAnalysis_8cpp.html',1,'']]],
