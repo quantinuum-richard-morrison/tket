@@ -76,6 +76,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classtket_1_1Transforms_1_1PhasedXFrontier-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">tket::Transforms::PhasedXFrontier Class Reference</div>  </div>
@@ -137,6 +138,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab07ac2629bf8cc252b29dd35d8663173"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Transforms_1_1PhasedXFrontier.html#ab07ac2629bf8cc252b29dd35d8663173">is_interval_boundary</a> (<a class="el" href="namespacetket.html#a75405147f5ffd3ff1ff1118fba63bcd0">Op_ptr</a> op)</td></tr>
 <tr class="memdesc:ab07ac2629bf8cc252b29dd35d8663173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the vertex is within a single-qb interval.  <a href="classtket_1_1Transforms_1_1PhasedXFrontier.html#ab07ac2629bf8cc252b29dd35d8663173">More...</a><br /></td></tr>
 <tr class="separator:ab07ac2629bf8cc252b29dd35d8663173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a2294515af9635dea668a281018b9f248"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtket_1_1Transforms_1_1PhasedXFrontier.html#a2294515af9635dea668a281018b9f248">PhasedXFrontierTester</a></td></tr>
+<tr class="separator:a2294515af9635dea668a281018b9f248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Frontier and circuit manipulation for <code>globalise_PhasedX</code> </p>
@@ -157,7 +163,7 @@ Static Public Member Functions</h2></td></tr>
 <h3>Insert global NPhasedX gates</h3>
 <p><code>insert_1_phasedx</code> and <code>insert_2_phasedx</code> will insert 1x resp 2x global NPhasedX gates at the beginning of the current frontier. The resuling circuit will always be equivalent to the original one. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8hpp_source.html#l00107">107</a> of file <a class="el" href="PhasedXFrontier_8hpp_source.html">PhasedXFrontier.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8hpp_source.html#l00108">108</a> of file <a class="el" href="PhasedXFrontier_8hpp_source.html">PhasedXFrontier.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a729681e268406ce0917d300e764f03d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a729681e268406ce0917d300e764f03d4">&#9670;&nbsp;</a></span>PhasedXFrontier()</h2>
@@ -183,7 +189,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00200">200</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00207">207</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +212,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether there are further non-trivial intervals ahead. </p>
 <p>Useful to know if a certain computation can be deferred until later. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00282">282</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00289">289</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
 
 </div>
 </div>
@@ -335,7 +341,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00293">293</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00300">300</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,7 +365,7 @@ Static Public Member Functions</h2></td></tr>
 <p>PhX(α, β) = Rz(β + 1/2) PhX(1/2, 0) Rz(α) PhX(-1/2, 0) Rz(-β - 1/2)</p>
 <p>ie the PhX gates can be made global. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00378">378</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00385">385</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
 
 </div>
 </div>
@@ -532,7 +538,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00255">255</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00262">262</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
 
 </div>
 </div>
@@ -554,6 +560,31 @@ Static Public Member Functions</h2></td></tr>
 <p>Squash the current intervals on each qubit. </p>
 
 <p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8cpp_source.html#l00065">65</a> of file <a class="el" href="PhasedXFrontier_8cpp_source.html">PhasedXFrontier.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a2294515af9635dea668a281018b9f248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2294515af9635dea668a281018b9f248">&#9670;&nbsp;</a></span>PhasedXFrontierTester</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classtket_1_1Transforms_1_1PhasedXFrontierTester.html">PhasedXFrontierTester</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PhasedXFrontier_8hpp_source.html#l00295">295</a> of file <a class="el" href="PhasedXFrontier_8hpp_source.html">PhasedXFrontier.hpp</a>.</p>
 
 </div>
 </div>
